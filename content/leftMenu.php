@@ -54,7 +54,7 @@
         <span>Klar</span>
     </div>
     <div class="leftMenuItem">
-        <div class="visitLink">Kasino</div>
+        <div class="visitLink">Kræsj</div>
     </div>
     <div class="leftMenuItem">
         <div class="visitLink">Lotto</div>
