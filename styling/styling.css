@@ -1,0 +1,402 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+:root {
+  --default-blue: #2ec8da;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  background-image: url("..//media/BG.png");
+  background-position: center;
+  font-family: "Ubuntu", sans-serif;
+  background-color: #131313;
+}
+
+* {
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box; /* Firefox, other Gecko */
+  box-sizing: border-box; /* Opera/IE 8+ */
+}
+
+.main {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  width: 100%;
+  padding: 10px;
+  background-color: #131313;
+  border-bottom: 2px solid #242424;
+  display: flex;
+  justify-content: center;
+}
+
+.leftHeader,
+.rightHeader {
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+  align-items: center;
+}
+
+.headerIcon {
+  color: #696969;
+  font-size: 23px;
+  transition: 0.2s;
+}
+
+.headerIcon:hover {
+  color: #2cbecf !important;
+  cursor: pointer;
+}
+
+.innerHeader {
+  width: 1580px;
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.searchBarHeader {
+  background-color: #1c1c1c;
+  outline: none;
+  border: none;
+  padding: 7px;
+  border-radius: 5px;
+  border: 1px solid #4b4b4b;
+  color: #4b4b4b;
+  width: 450px;
+  transition: 0.2s;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.searchBarHeader:active,
+.searchBarHeader:focus,
+.searchBarHeader:hover {
+  color: white !important;
+  border-color: #2cbecf;
+}
+
+.underHeader {
+  display: flex;
+  justify-content: space-between;
+  width: 1080px;
+  margin-top: 5px;
+}
+
+.rightUnderHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: end;
+  font-size: 12px;
+  color: grey;
+}
+
+.rightUnderHeader .day,
+.rightUnderHeader .playersOnline {
+  padding: 5px;
+  background-color: #232425;
+  border-radius: 5px;
+  transition: 0.2s;
+}
+
+.rightUnderHeader .day:hover,
+.rightUnderHeader .playersOnline:hover {
+  background-color: #454545;
+  color: white;
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.actionContainer {
+  width: 1080px;
+  background-color: #131313;
+  border-radius: 8px;
+  border: 1px solid #242424;
+  padding: 10px;
+  display: flex;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+.action {
+  padding: 10px;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-left: 1px solid #242424;
+}
+
+.action:hover {
+  cursor: pointer;
+}
+
+.action:first-child {
+  border: none;
+}
+
+.actionIcon {
+  color: grey;
+}
+
+.readyIcon {
+  color: var(--default-blue);
+}
+
+.actionText {
+  display: flex;
+  flex-direction: column;
+}
+
+.actionText p {
+  margin: 0;
+  font-size: 12px;
+}
+
+.actionText .readyText p {
+  text-transform: uppercase;
+}
+
+.actionTextPrimary {
+  color: white;
+}
+
+.actionTextSecondary {
+  color: grey;
+}
+
+.readyText {
+  color: var(--default-blue);
+}
+
+.content {
+  width: 1080px;
+  border-radius: 8px;
+  display: flex;
+  gap: 5px;
+  margin-top: 5px;
+}
+
+.leftMenu,
+.rightMenu,
+.game {
+  height: 500px;
+  background-color: #131313;
+  border-radius: 8px;
+  border: 1px solid #242424;
+}
+
+.leftMenu,
+.rightMenu {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+}
+
+.leftMenu {
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.leftMenuItem {
+  font-size: 11px;
+  transition: 0.2s;
+  display: flex;
+  justify-content: space-between;
+}
+
+.leftMenuItem span {
+  color: var(--default-blue);
+}
+
+.leftMenuItem .visitLink {
+  text-decoration: none;
+  color: white;
+}
+
+.leftMenuItem .visitLink:hover {
+  cursor: pointer;
+  color: var(--default-blue);
+}
+
+.game {
+  flex-grow: 1;
+  padding: 7px;
+}
+
+.gameHeader {
+  border: 1px solid #242424;
+  padding: 5px;
+  border-radius: 6px;
+  display: flex;
+}
+
+.infoContainer {
+  display: flex;
+  padding: 5px 10px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-grow: 1;
+  border-left: 1px solid #242424;
+}
+
+.infoContainer:first-child {
+  border: none;
+}
+
+.infoContainer:last-child {
+  border-radius: 5px;
+  border: none;
+}
+
+.infoIcon {
+  height: 16px;
+}
+
+.infoButton {
+  background-color: #262627;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.infoButton:hover {
+  cursor: pointer;
+  background-color: #454545;
+}
+
+.infoText {
+  color: white;
+  font-size: 11px;
+  text-decoration: none;
+}
+
+.gold {
+  color: #a58c2a;
+}
+
+.orange {
+  color: #da8b2e;
+}
+
+.yellow {
+  color: #dac42e;
+}
+
+.defaultBlue {
+  color: var(--default-blue);
+}
+
+.lime {
+  color: #c8d62e;
+}
+
+.df {
+  display: flex;
+}
+
+.jcsb {
+  justify-content: space-between;
+}
+
+.aic {
+  align-items: center;
+}
+
+.g5 {
+  gap: 5px;
+}
+
+.prevent-select {
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.snackbar-container {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 9999;
+}
+
+.snackbar {
+  visibility: hidden;
+  min-width: 250px;
+  background-color: #333;
+  color: #fff;
+  border-radius: 2px;
+  padding: 10px;
+  margin-bottom: 10px;
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+  font-size: 11px;
+}
+
+.snackbar.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+@-webkit-keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
