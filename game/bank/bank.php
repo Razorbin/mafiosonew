@@ -32,7 +32,8 @@
 
 <div class="functionContainer df g5">
   <div class="gameBox fb50">
-    <div class="df jcc">
+    <div class="df jcc aic g5">
+      <iconify-icon class="icon yellow" icon="mingcute:transfer-4-line"></iconify-icon>
       <h3>Siste 10 overførsler</h3>
     </div>
 
@@ -76,13 +77,49 @@
     </div>
 
   </div>
-  <div class="gameBox fb50"></div>
+  <div class="fb50">
+    <div class="gameBox fb50" style="align-self: flex-start;">
+      <div class="df jcc aic g5">
+        <iconify-icon class="icon lime" icon="solar:card-transfer-outline"></iconify-icon>
+        <h3>Overfør penger</h3>
+      </div>
+      <div class="mt-5 df g5 fdcol">
+        <div class="df g5">
+          <input class="textInput w-100" type="text" placeholder="Brukernavn">
+          <input class="textInput w-100" type="text" placeholder="Sum">
+        </div>
+        <div class="df g5 aic">
+          <input class="fg1" type="submit" value="Send penger">
+        </div>
+      </div>
+    </div>
+    <div id="stats" class="gameBox fb50 mt-5" style="align-self: flex-start;">
+      <div class="mcsalkm">
+        <div class="center-item df aic g5">
+          <iconify-icon class="icon pink" icon="pepicons-pencil:bank"></iconify-icon>
+          <h3>Statistikk</h3>
+        </div>
+        <div class="right-item">
+          <iconify-icon id="close-icon" class="clickableIcon icon textSecondary" icon="ic:baseline-close"></iconify-icon>
+        </div>
+      </div>
+
+      <div class="mt-5">
+        <ul class="mt-5 textSecondary">
+          <li>Antall penger tjent på renter: 52 000 000,-</li>
+          <li>Antall penger overført: 150 000 000,-</li>
+          <li>Antall penger mottatt: 120 000 000,-</li>
+          <li>Antall overførsler: 150,-</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>
 
 <style>
   .transfer:not(:first-child) {
     margin-top: 10px;
-    padding: 5px;
+    padding-top: 10px;
     border-top: 1px solid #242424;
   }
 
@@ -92,4 +129,37 @@
     border-radius: 20px;
     background-color: orange;
   }
+
+  .mcsalkm {
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+
+  .center-item {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .right-item {
+    margin-left: auto;
+  }
+
+  #stats {
+    transition: .2s;
+  }
+
+  .hidden {
+    opacity: 0;
+  }
 </style>
+
+<script>
+  var button = document.getElementById("close-icon");
+  var div = document.getElementById("stats");
+
+  button.addEventListener("click", function(event) {
+    div.classList.add("hidden");
+  });
+</script>

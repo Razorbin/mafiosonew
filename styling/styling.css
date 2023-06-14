@@ -472,6 +472,10 @@ h6 {
   width: 100%;
 }
 
+.mt-5 {
+  margin-top: 5px;
+}
+
 input[type='submit'] {
   background-color: #262627;
   border-radius: 5px;
@@ -485,4 +489,28 @@ input[type='submit'] {
 input[type='submit']:hover {
   cursor: pointer;
   background-color: #454545;
+}
+
+.icon {
+  font-size: 16px;
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+  padding: 2px 0px;
+}
+
+.clickableIcon {
+  transition: 0.2s;
+}
+
+.clickableIcon:hover {
+  color: white;
+  cursor: pointer;
 }
