@@ -116,45 +116,6 @@
   </div>
 </div>
 
-<style>
-  .transfer:not(:first-child) {
-    margin-top: 10px;
-    padding-top: 10px;
-    border-top: 1px solid #242424;
-  }
-
-  .transfer .avatar {
-    height: 25px;
-    width: 25px;
-    border-radius: 20px;
-    background-color: orange;
-  }
-
-  .mcsalkm {
-    position: relative;
-    display: flex;
-    justify-content: center;
-  }
-
-  .center-item {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  .right-item {
-    margin-left: auto;
-  }
-
-  #stats {
-    transition: .2s;
-  }
-
-  .hidden {
-    opacity: 0;
-  }
-</style>
-
 <script>
   var button = document.getElementById("close-icon");
   var div = document.getElementById("stats");
