@@ -31,7 +31,7 @@
 </div>
 
 <div class="functionContainer df g5">
-  <div class="gameBox fb50">
+  <div class="gameBox fb50" style="align-self: flex-start;">
     <div class="df jcc aic g5">
       <iconify-icon class="icon yellow" icon="mingcute:transfer-4-line"></iconify-icon>
       <h3>Siste 10 overførsler</h3>
@@ -78,7 +78,7 @@
 
   </div>
   <div class="fb50">
-    <div class="gameBox fb50" style="align-self: flex-start;">
+    <div class="gameBox fb50 asfs">
       <div class="df jcc aic g5">
         <iconify-icon class="icon lime" icon="solar:card-transfer-outline"></iconify-icon>
         <h3>Overfør penger</h3>
@@ -93,7 +93,7 @@
         </div>
       </div>
     </div>
-    <div id="stats" class="gameBox fb50 mt-5" style="align-self: flex-start;">
+    <div id="stats" class="gameBox fb50 mt-5 asfs">
       <div class="mcsalkm">
         <div class="center-item df aic g5">
           <iconify-icon class="icon pink" icon="pepicons-pencil:bank"></iconify-icon>

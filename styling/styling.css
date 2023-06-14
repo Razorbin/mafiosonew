@@ -221,6 +221,7 @@ a:hover {
   width: 20%;
   display: flex;
   flex-direction: column;
+  min-width: 216px;
 }
 
 .leftMenu {
@@ -562,4 +563,16 @@ li {
 
 .hidden {
   opacity: 0;
+}
+
+.tar {
+  text-align: right;
+}
+
+.jcfe {
+  justify-content: flex-end;
+}
+
+.asfs {
+  align-self: flex-start;
 }

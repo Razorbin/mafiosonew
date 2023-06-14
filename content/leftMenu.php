@@ -26,25 +26,43 @@
         <div class="visitLink" data-page="airport" data-phpfile="game/airport/airport.php" data-targetdiv="#gameContent">Flyplass</div>
         <span>Klar</span>
     </div>
-    <div class="leftMenuItem"><div class="visitLink">Smugling</div></div>
+    <div class="leftMenuItem">
+        <div class="visitLink">Smugling</div>
+    </div>
     <div class="leftMenuItem">
         <div class="visitLink">Oppdrag</div>
         <span><?php echo bigNumbers(45) ?> av <?php echo bigNumbers(65) ?></span>
     </div>
-    <div class="leftMenuItem"><div class="visitLink">Hurtig oppdrag</div></div>
-    <div class="leftMenuItem"><div class="visitLink">Aksjemarked</div></div>
-    <div class="leftMenuItem"><div class="visitLink">Familie</div></div>
     <div class="leftMenuItem">
-        <div class="visitLink">Dagens safe</div>
+        <div class="visitLink">Hurtig oppdrag</div>
+    </div>
+    <div class="leftMenuItem">
+        <div class="visitLink">Aksjemarked</div>
+    </div>
+    <div class="leftMenuItem">
+        <div class="visitLink">Familie</div>
+    </div>
+    <div class="leftMenuItem">
+        <div class="visitLink" data-page="safe" data-phpfile="game/safe/safe.php" data-targetdiv="#gameContent">Dagens safe</div>
         <span>Klar</span>
     </div>
-    <div class="leftMenuItem"><div class="visitLink">Drapsorganisering</div></div>
+    <div class="leftMenuItem">
+        <div class="visitLink">Drapsorganisering</div>
+    </div>
     <div class="leftMenuItem">
         <div class="visitLink">Skytetrening</div>
         <span>Klar</span>
     </div>
-    <div class="leftMenuItem"><div class="visitLink">Kasino</div></div>
-    <div class="leftMenuItem"><div class="visitLink">Lotto</div></div>
-    <div class="leftMenuItem"><div class="visitLink">Kast mynt</div></div>
-    <div class="leftMenuItem"><div class="visitLink">Terninger</div></div>
+    <div class="leftMenuItem">
+        <div class="visitLink">Kasino</div>
+    </div>
+    <div class="leftMenuItem">
+        <div class="visitLink">Lotto</div>
+    </div>
+    <div class="leftMenuItem">
+        <div class="visitLink">Kast mynt</div>
+    </div>
+    <div class="leftMenuItem">
+        <div class="visitLink">Terninger</div>
+    </div>
 </div>
