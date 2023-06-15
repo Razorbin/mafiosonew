@@ -1,7 +1,8 @@
 <div class="functionContainer df g5">
   <div class="gameBox fb50 df fdcol aic g5 asfs">
-    <div class="df g5 w-100">
+    <div class="df g5 fdcol w-100">
       <p class="textSecondary">Dagens safe kan åpnes en gang om dagen og inneholder en stor belønnelse! Koden består av en 4-sifret kode bestående kun av tall. For at du ikke skal legge fra deg for mye oppmerksomhet kan du kun prøve koden hvert 5. minutt. Klokken 12:00 blir koden endret og forsøkene samt vinneren blir nullstilt.</p>
+      <i class="textSecondary my-5"><b>Hint:</b> Tallet er mellom 2222 og 5555</i>
     </div>
     <div class="df g5 fdcol">
       <div>
@@ -32,8 +33,8 @@
       <div class="df aic fg1">
         4545
       </div>
-      <div class="df aic fg1 jcfe">
-        <span>Korrekt!</span>
+      <div class="df aic g5 fg1 jcfe">
+        <span >Korrekt!</span>
         <iconify-icon class="icon defaultBlue" icon="ic:round-check"></iconify-icon>
       </div>
     </div>

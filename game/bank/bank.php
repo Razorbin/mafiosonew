@@ -116,6 +116,7 @@
   </div>
 </div>
 
+
 <script>
   var button = document.getElementById("close-icon");
   var div = document.getElementById("stats");
