@@ -54,7 +54,7 @@
         <span>Klar</span>
     </div>
     <div class="leftMenuItem">
-        <div class="visitLink">Kræsj</div>
+        <div class="visitLink" data-page="crash" data-phpfile="game/crash/crash.php" data-targetdiv="#gameContent">Kræsj</div>
     </div>
     <div class="leftMenuItem">
         <div class="visitLink">Lotto</div>

@@ -1,17 +1,18 @@
 <?php
+
 // Connect to your database and fetch the values
-// ...
 $balance = 1000;
-$bullets = 500;
+$bankBalance = 100000000;
+$bullets = 50;
 $points = 150;
 $city = 'New York';
 $family = 'Cosa Nostra';
 $playersOnline = 15;
 $playersInJail = 0;
 
-// Prepare the data array
 $data = [
   'balance' => $balance,
+  'bankBalance' => $bankBalance,
   'bullets' => $bullets,
   'points' => $points,
   'city' => $city,
@@ -20,6 +21,6 @@ $data = [
   'playersInJail' => $playersInJail
 ];
 
-// Return the data as a JSON response
 echo json_encode($data);
+
 ?>

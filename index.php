@@ -26,6 +26,7 @@ include 'helpers.php';
 
             ?>
 
+<div class="df">
             <div class="container">
                 <?php include 'content/actionHeader.php' ?>
 
@@ -43,9 +44,23 @@ include 'helpers.php';
                     <!-- <button onclick="newSnackbar('test', 'success')">Show Snackbar</button> -->
                 </div>
             </div>
+            <?php include 'content/livechat.php' ?>
         </div>
+        <script>
+
+        var liveChat = document.getElementById("liveChat");
+        var toggleButton = document.getElementById("toggleLivechat");
+
+        toggleButton.addEventListener("click", function() {
+            liveChat.classList.toggle("hiddenLivechat");
+            toggleButton.classList.toggle("defaultBlue", !liveChat.classList.contains("hiddenLivechat"));
+        });
+
+        </script>
+
         <script src="js/suggestions.js"></script>
         <script src="js/snackbar.js"></script>
+        <script src="js/livechat.js"></script>
         <script src="js/getData.js"></script>
         <script src="js/router.js"></script>
         <script src="js/date.js"></script>

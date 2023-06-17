@@ -3,7 +3,10 @@
     <div class="df g5 fdcol w-100">
       <div class="df aic g5 jcsb w-100">
         <p class="textSecondary">Din saldo</p>
-        <h3>100 000 000<span class="textSecondary fontSmall"> ,-</span></h3>
+        <span class="df aic fdrow">
+          <h3 id="bankBalance">100 000 000</h3>
+          <span class="textSecondary fontSmall"> ,-</span>
+        </span>
       </div>
       <div class="df aic g5 jcsb">
         <p class="textSecondary">Totalt overført/mottatt</p>
@@ -11,7 +14,10 @@
       </div>
       <div class="df aic g5 jcsb">
         <p class="textSecondary">Renter ved midnatt</p>
-        <h3>10 000 000 <span class="textSecondary fontSmall">(10%)</span></h3>
+        <span class="df aic fdrow">
+          <h3>10 000 000</h3>
+          <span class="textSecondary fontSmall">,- (10%)</span>
+        </span>
       </div>
     </div>
   </div>
@@ -21,7 +27,7 @@
         <input class="textInput w-100" type="text" placeholder="Sum">
       </div>
       <div class="df g5 aic">
-        <input class="fg1" type="submit" value="Sett inn">
+        <input id="settInn" class="fg1" type="submit" value="Sett inn">
         <input class="fg1" type="submit" value="Ta ut">
         <input class="fg1" type="submit" value="Sett inn alt">
         <input class="fg1" type="submit" value="Ta ut alt">
@@ -124,4 +130,17 @@
   button.addEventListener("click", function(event) {
     div.classList.add("hidden");
   });
+
+  function runGetData() {
+    var script = document.createElement('script');
+    script.src = 'js/getData.js';
+    document.body.appendChild(script);
+    }
+
+  var settInn = document.getElementById('settInn');
+
+  settInn.addEventListener('click', function() {
+    runGetData();
+  });
+
 </script>
