@@ -1,3 +1,14 @@
+var liveChat = document.getElementById("liveChat");
+var toggleButton = document.getElementById("toggleLivechat");
+
+toggleButton.addEventListener("click", function () {
+  liveChat.classList.toggle("hiddenLivechat");
+  toggleButton.classList.toggle(
+    "defaultBlue",
+    !liveChat.classList.contains("hiddenLivechat")
+  );
+});
+
 document
   .getElementById("chatForm")
   .addEventListener("submit", function (event) {

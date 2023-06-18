@@ -13,6 +13,9 @@ $(document).ready(function () {
         var formattedBankBalance = formatNumberWithSpaces(response.bankBalance);
         var formattedBullets = formatNumberWithSpaces(response.bullets);
         var formattedPoints = formatNumberWithSpaces(response.points);
+        var formattedInterests = formatNumberWithSpaces(
+          Math.floor(response.bankBalance * 0.1)
+        );
 
         $("#balance").text(formattedBalance + ",-");
         $("#bankBalance").text(formattedBankBalance);
@@ -23,6 +26,7 @@ $(document).ready(function () {
         $("#playersOnline").text(response.playersOnline);
         $("#playersOnline2").text(response.playersOnline);
         $("#playersInJail").text(response.playersInJail);
+        $("#interests").text(formattedInterests);
       },
     });
   }

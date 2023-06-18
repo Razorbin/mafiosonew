@@ -1,11 +1,18 @@
 <?php
 
-// Connect to your database and fetch the values
-$balance = 1000;
-$bankBalance = 100000000;
-$bullets = 50;
+include '../db/db.php';
+
+$cities = ['Oslo', 'New York'];
+
+$stmt = $pdo->prepare('SELECT * FROM user WHERE id = :id');
+$stmt->execute(['id' => $_SESSION['ID']]);
+$user = $stmt->fetch();
+
+$balance = $user['money'];
+$bankBalance = $user['bankBalance'];
+$bullets = $user['bullets'];
 $points = 150;
-$city = 'New York';
+$city = $cities[$user['city']];
 $family = 'Cosa Nostra';
 $playersOnline = 15;
 $playersInJail = 0;

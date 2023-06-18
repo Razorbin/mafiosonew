@@ -4,7 +4,7 @@
       <div class="df aic g5 jcsb w-100">
         <p class="textSecondary">Din saldo</p>
         <span class="df aic fdrow">
-          <h3 id="bankBalance">100 000 000</h3>
+          <h3 id="bankBalance"></h3>
           <span class="textSecondary fontSmall"> ,-</span>
         </span>
       </div>
@@ -15,7 +15,7 @@
       <div class="df aic g5 jcsb">
         <p class="textSecondary">Renter ved midnatt</p>
         <span class="df aic fdrow">
-          <h3>10 000 000</h3>
+          <h3 id="interests"></h3>
           <span class="textSecondary fontSmall">,- (10%)</span>
         </span>
       </div>
@@ -29,8 +29,8 @@
       <div class="df g5 aic">
         <input id="settInn" class="fg1" type="submit" value="Sett inn">
         <input class="fg1" type="submit" value="Ta ut">
-        <input class="fg1" type="submit" value="Sett inn alt">
-        <input class="fg1" type="submit" value="Ta ut alt">
+        <input class="fg1" id="allIn" type="submit" value="Sett inn alt">
+        <input class="fg1" id="allOut" type="submit" value="Ta ut alt">
       </div>
     </div>
   </div>
@@ -124,6 +124,41 @@
 
 
 <script>
+
+
+function runGetData() {
+  var script = document.createElement('script');
+  script.src = 'js/getData.js';
+  document.body.appendChild(script);
+}
+
+function sendAjaxRequest(url) {
+  var xhr = new XMLHttpRequest();
+  xhr.open("POST", url, true);
+  xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  xhr.onreadystatechange = function() {
+      if (xhr.readyState === XMLHttpRequest.DONE) {
+          if (xhr.status === 200) {
+              // Request completed successfully
+              runGetData();
+          } else {
+              // Request encountered an error
+              console.error("Request error:", xhr.status);
+          }
+      }
+  };
+  xhr.send();
+}
+
+document.getElementById("allIn").addEventListener("click", function() {
+    sendAjaxRequest("game/bank/moneyAllIn.php");
+});
+
+document.getElementById("allOut").addEventListener("click", function() {
+    sendAjaxRequest("game/bank/moneyAllOut.php");
+});
+
+
   var button = document.getElementById("close-icon");
   var div = document.getElementById("stats");
 
@@ -131,16 +166,12 @@
     div.classList.add("hidden");
   });
 
-  function runGetData() {
-    var script = document.createElement('script');
-    script.src = 'js/getData.js';
-    document.body.appendChild(script);
-    }
-
   var settInn = document.getElementById('settInn');
 
   settInn.addEventListener('click', function() {
     runGetData();
   });
+
+  runGetData();
 
 </script>
