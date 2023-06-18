@@ -219,6 +219,7 @@ a:hover {
   background-color: #131313;
   border-radius: 8px;
   border: 1px solid #242424;
+  color: white;
 }
 
 .leftMenu,
@@ -662,4 +663,92 @@ li {
 
 .blinkingIcon {
   animation: blink 1s infinite;
+}
+
+.rightMenu .userInfo span {
+  font-size: 11px;
+  border: 1px solid #414141;
+  padding: 2px 5px;
+  border-radius: 10px;
+  color: #565656;
+}
+
+.rightMenu {
+  padding: 10px;
+}
+
+.rankbar {
+  width: 100%;
+  border: 1px solid #414141;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #414141;
+}
+
+.rankbar .fill {
+  height: 100%;
+  border-radius: 5px;
+  background-color: var(--default-blue);
+}
+
+/* Add this attribute to the element that needs a tooltip */
+[data-tooltip] {
+  position: relative;
+  z-index: 2;
+}
+
+/* Hide the tooltip content by default */
+[data-tooltip]:before,
+[data-tooltip]:after {
+  visibility: hidden;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Position tooltip above the element */
+[data-tooltip]:before {
+  position: absolute;
+  bottom: 150%;
+  left: 50%;
+  margin-bottom: 5px;
+  margin-left: -80px;
+  padding: 7px;
+  width: 160px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #000;
+  background-color: hsla(0, 0%, 20%, 0.9);
+  color: #fff;
+  content: attr(data-tooltip);
+  text-align: center;
+  font-size: 11px;
+  line-height: 1.2;
+}
+
+/* Triangle hack to make tooltip look like a speech bubble */
+[data-tooltip]:after {
+  position: absolute;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -5px;
+  width: 0;
+  border-top: 5px solid #000;
+  border-top: 5px solid hsla(0, 0%, 20%, 0.9);
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+  content: " ";
+  font-size: 0;
+  line-height: 0;
+}
+
+/* Show tooltip content on hover */
+[data-tooltip]:hover:before,
+[data-tooltip]:hover:after {
+  visibility: visible;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
 }

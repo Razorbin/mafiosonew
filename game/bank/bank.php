@@ -13,7 +13,9 @@
         <h3>1 000<span class="textSecondary fontSmall"> ,- /</span> 5 000<span class="textSecondary fontSmall"> ,-</span></h3>
       </div>
       <div class="df aic g5 jcsb">
-        <p class="textSecondary">Renter ved midnatt</p>
+        <p class="df g5 textSecondary aic">
+            <span>Renter ved midnatt</span>
+            <iconify-icon data-tooltip="Renter utbetales 23:55" icon="mdi:information-outline"></iconify-icon> </p>
         <span class="df aic fdrow">
           <h3 id="interests"></h3>
           <span class="textSecondary fontSmall">,- (10%)</span>
