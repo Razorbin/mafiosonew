@@ -19,13 +19,12 @@ include 'helpers.php';
     </head>
     <body>
         <div class="main">
-            <?php
+        <?php
 
-            include 'content/header.php';
-            include 'content/underHeader.php';
+        include 'content/header.php';
+        include 'content/underHeader.php';
 
-            ?>
-
+        ?>
         <div class="df">
             <div class="container">
                 <?php include 'content/actionHeader.php' ?>
@@ -36,8 +35,8 @@ include 'helpers.php';
                         <?php
 
                         include 'content/gameHeader.php';
-                        ?>
 
+                        ?>
                         <div id="gameContent"></div>
                     </div>
                     <?php include 'content/rightMenu.php' ?>

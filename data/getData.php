@@ -4,14 +4,14 @@ include '../db/db.php';
 
 $cities = ['Oslo', 'New York'];
 
-$stmt = $pdo->prepare('SELECT * FROM user WHERE id = :id');
+$stmt = $pdo->prepare('SELECT money, bankBalance, bullets, points, city FROM user WHERE id = :id');
 $stmt->execute(['id' => $_SESSION['ID']]);
 $user = $stmt->fetch();
 
 $balance = $user['money'];
 $bankBalance = $user['bankBalance'];
 $bullets = $user['bullets'];
-$points = 150;
+$points = $user['points'];
 $city = $cities[$user['city']];
 $family = 'Cosa Nostra';
 $playersOnline = 15;
