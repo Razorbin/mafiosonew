@@ -31,5 +31,5 @@ $(document).ready(function () {
   updateData();
 
   // Update the data every few seconds (e.g., every 5 seconds)
-  setInterval(updateData, 100000);
+  setInterval(updateData, 5000);
 });
