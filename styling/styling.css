@@ -645,7 +645,8 @@ li {
   margin-top: 5px;
 }
 
-.hiddenLivechat {
+.hiddenLivechat,
+.hiddenStockTicker {
   display: none;
 }
 
@@ -674,7 +675,7 @@ li {
 }
 
 .rightMenu {
-  padding: 10px;
+  padding: 7px;
 }
 
 .rankbar {
@@ -751,4 +752,86 @@ li {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
   filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
+}
+
+@-webkit-keyframes ticker {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    visibility: visible;
+  }
+  100% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+@keyframes ticker {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    visibility: visible;
+  }
+  100% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+.ticker-wrap {
+  width: 100%;
+  overflow: hidden;
+  padding-left: 100%;
+  box-sizing: content-box;
+}
+.ticker-wrap .ticker {
+  display: inline-flex;
+  white-space: nowrap;
+  padding-right: 100%;
+  box-sizing: content-box;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-name: ticker;
+  animation-name: ticker;
+  -webkit-animation-duration: 30s;
+  animation-duration: 30s;
+}
+.ticker-wrap .ticker__item {
+  display: inline-block;
+  padding: 0 2rem;
+  font-size: 11px;
+  color: white;
+  position: relative;
+}
+
+.ticker-wrap .ticker__item:before {
+  content: "";
+  width: 1px;
+  height: 75%;
+  background-color: #242424;
+  transform: translateY(-50%);
+  position: absolute;
+  top: 50%;
+  right: 0;
+}
+
+.stock-name {
+  text-decoration: uppercase;
+  padding: 0 0.2rem;
+}
+
+.stock-price {
+  padding: 0 0.5rem;
+}
+
+.stock-price {
+  font-weight: bold;
+}
+
+.positive {
+  color: #33e190;
+}
+
+.negative {
+  color: #ff3860;
 }

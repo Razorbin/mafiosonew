@@ -3,7 +3,7 @@
         <div class="leftHeader">
             <img src="media/logo.png" />
             <iconify-icon class="headerIcon" icon="ph:house"></iconify-icon>
-            <iconify-icon class="headerIcon" icon="octicon:graph-24"></iconify-icon>
+            <iconify-icon id="toggleStockTicker" class="headerIcon" icon="octicon:graph-24"></iconify-icon>
             <iconify-icon class="headerIcon" icon="ph:shopping-cart-light"></iconify-icon>
             <iconify-icon class="headerIcon" icon="ph:chat-light"></iconify-icon>
 

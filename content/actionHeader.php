@@ -63,3 +63,67 @@
         </div>
     </div>
 </div>
+
+<div id="stockTicker" class="hiddenStockTicker actionContainer stockTicker">
+    <div class="ticker-wrap">
+    <div class="ticker">
+        <div class="ticker__item self-start flex-none">
+            <iconify-icon icon="fa6-solid:oil-well"></iconify-icon>
+            <span class="stock-name">EQN</span>
+            <span class="stock-price">15 000,-</span>
+            <span class="stock-growth negative">&#9660; 14 857</span>
+        </div>
+        <div class="ticker__item self-start flex-none">
+        <iconify-icon icon="eos-icons:software"></iconify-icon>
+            <span class="stock-name">CRAYN</span>
+            <span class="stock-price">$335.18</span>
+            <span class="stock-growth positive">&#9650; $0.57</span>
+        </div>
+        <div class="ticker__item self-start flex-none">
+            <span class="stock-name">PLS</span>
+            <span class="stock-price">$226.90</span>
+            <span class="stock-growth negative">&#9660; $0.57</span>
+        </div>
+        <div class="ticker__item self-start flex-none">
+            <span class="stock-name">BRO</span>
+            <span class="stock-price">$335.18</span>
+            <span class="stock-growth positive">&#9650; $0.57</span>
+        </div>
+        <div class="ticker__item self-start flex-none">
+            <span class="stock-name">TLSA</span>
+            <span class="stock-price">$335.18</span>
+            <span class="stock-growth positive">&#9650; $0.57</span>
+        </div>
+        <div class="ticker__item self-start flex-none">
+            <span class="stock-name">BRO</span>
+            <span class="stock-price">$335.18</span>
+            <span class="stock-growth positive">&#9650; $0.57</span>
+        </div>
+        <div class="ticker__item self-start flex-none">
+            <span class="stock-name">PLS</span>
+            <span class="stock-price">$226.90</span>
+            <span class="stock-growth negative">&#9660; $0.57</span>
+        </div>
+        <div class="ticker__item self-start flex-none">
+            <span class="stock-name">BRO</span>
+            <span class="stock-price">$335.18</span>
+            <span class="stock-growth positive">&#9650; $0.57</span>
+        </div>
+        <div class="ticker__item self-start flex-none">
+            <span class="stock-name">PLS</span>
+            <span class="stock-price">$226.90</span>
+            <span class="stock-growth negative">&#9660; $0.57</span>
+        </div>
+        <div class="ticker__item self-start flex-none">
+            <span class="stock-name">DIA</span>
+            <span class="stock-price">$335.18</span>
+            <span class="stock-growth positive">&#9650; $0.57</span>
+        </div>
+        <div class="ticker__item self-start flex-none">
+            <span class="stock-name">DIA</span>
+            <span class="stock-price">$335.18</span>
+            <span class="stock-growth positive">&#9650; $0.57</span>
+        </div>
+    </div>
+    </div>
+</div>
