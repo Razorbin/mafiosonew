@@ -55,4 +55,4 @@ function getChatMessages() {
 
 // Fetch chat messages initially and then poll for new messages every second
 getChatMessages();
-setInterval(getChatMessages, 1000);
+setInterval(getChatMessages, 5000);

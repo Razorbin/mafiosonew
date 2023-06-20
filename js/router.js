@@ -1,4 +1,19 @@
 $(document).ready(function () {
+  var urlParams = new URLSearchParams(window.location.search);
+  var pageParam = urlParams.get("page");
+
+  if (pageParam) {
+    var targetDiv = "#" + pageParam;
+    var phpFile = "game/" + pageParam + "/" + pageParam + ".php";
+
+    $.ajax({
+      url: phpFile,
+      success: function (result) {
+        $(targetDiv).html(result);
+      },
+    });
+  }
+
   $(".visitLink").click(function () {
     var phpFile = $(this).data("phpfile");
     var targetDiv = $(this).data("targetdiv");
@@ -20,9 +35,10 @@ $(document).ready(function () {
     if (event.state && event.state.page) {
       var page = event.state.page;
       var targetDiv = "#" + page;
+      var phpFile = page + ".php";
 
       $.ajax({
-        url: page + ".php",
+        url: phpFile,
         success: function (result) {
           $(targetDiv).html(result);
         },

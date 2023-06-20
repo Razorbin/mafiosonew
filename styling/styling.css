@@ -835,3 +835,11 @@ li {
 .negative {
   color: #ff3860;
 }
+
+th {
+  text-align: left;
+}
+
+tr td {
+  padding: 5px 0px;
+}
