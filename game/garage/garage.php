@@ -11,10 +11,33 @@
             <tbody id="carTableBody"></tbody>
         </table>
         <button id="loadCarsButton">Load</button>
+        <button id="sellAll">Selg alle</button>
     </div>
 </div>
 
 <script>
+
+function runGetData() {
+  var script = document.createElement('script');
+  script.src = 'js/getData.js';
+  document.body.appendChild(script);
+}
+
+$(document).ready(function() {
+  $('#sellAll').click(function() {
+    $.ajax({
+      url: 'game/garage/sellAllCars.php',
+      type: 'POST',
+      data: {},
+      success: function(response) {
+        runGetData();
+      },
+      error: function(xhr, status, error) {
+        console.error(error);
+      }
+    });
+  });
+});
 
 function loadCars() {
   fetch('game/garage/getGarageData.php')
@@ -35,7 +58,7 @@ function loadCars() {
         row.appendChild(cityCell);
 
         var valueCell = document.createElement('td');
-        valueCell.textContent = car.value;
+        valueCell.textContent = car.value + ',-';
         row.appendChild(valueCell);
 
         carTableBody.appendChild(row);
