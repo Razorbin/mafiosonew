@@ -15,7 +15,7 @@
       <div class="df aic g5 jcsb">
         <p class="df g5 textSecondary aic">
             <span>Renter ved midnatt</span>
-            <iconify-icon data-tooltip="Renter utbetales 23:55" icon="mdi:information-outline"></iconify-icon> </p>
+            <iconify-icon data-tooltip="Renter utbetales 23:55. Du kan maks få 1 000 000,- i renter" icon="mdi:information-outline"></iconify-icon> </p>
         <span class="df aic fdrow">
           <h3 id="interests"></h3>
           <span class="textSecondary fontSmall">,- (10%)</span>

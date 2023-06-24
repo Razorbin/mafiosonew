@@ -1,1 +1,1 @@
-Jeg er business
+Je'suis business

@@ -9,9 +9,13 @@ $(document).ready(function () {
         var formattedBankBalance = formatNumberWithSpaces(response.bankBalance);
         var formattedBullets = formatNumberWithSpaces(response.bullets);
         var formattedPoints = formatNumberWithSpaces(response.points);
-        var formattedInterests = formatNumberWithSpaces(
-          Math.floor(response.bankBalance * 0.1)
-        );
+        var interests = Math.floor(response.bankBalance * 0.1);
+
+        if (interests > 1000000) {
+          interests = 1000000;
+        }
+
+        var formattedInterests = formatNumberWithSpaces(interests);
 
         $("#balance").text(formattedBalance + ",-");
         $("#bankBalance").text(formattedBankBalance);
