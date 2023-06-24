@@ -3,7 +3,7 @@ $(document).ready(function () {
   var pageParam = urlParams.get("page");
 
   if (pageParam) {
-    var targetDiv = "#" + pageParam;
+    var targetDiv = "#gameContent";
     var phpFile = "game/" + pageParam + "/" + pageParam + ".php";
 
     $.ajax({
