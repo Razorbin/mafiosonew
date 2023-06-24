@@ -12,11 +12,10 @@
             </thead>
             <tbody id="carTableBody"></tbody>
         </table>
-        <div class="my-5 g5 df jcc aic w-100">
+        <div id="infoDiv" class="my-5 g5 df jcc aic w-100">
           <div id="totalValueDiv"></div>
           <input type="submit" id="sellAll" value="Selg alle">
         </div>
-        <!-- <button id="loadCarsButton">Load</button> -->
     </div>
 </div>
 
@@ -34,19 +33,19 @@ function loadCars() {
     .then(cars => {
       var carTableBody = document.getElementById('carTableBody');
       var carTable = document.getElementById('carTable');
-      var sellAllBtn = document.getElementById('sellAll');
+      var infoDiv = document.getElementById('infoDiv');
       carTableBody.innerHTML = '';
 
       if (cars.length === 0) {
         var noCarsDiv = document.getElementById('noCars');
         noCarsDiv.style.display = 'block'; // Show the "noCars" div
         carTable.style.display = 'none'; // Hide the table
-        sellAllBtn.style.display = 'none';
+        infoDiv.style.display = 'none';
       } else {
         var noCarsDiv = document.getElementById('noCars');
         noCarsDiv.style.display = 'none'; // Hide the "noCars" div
         carTable.style.display = 'table'; // Show the table
-        sellAllBtn.style.display = 'block';
+        infoDiv.style.display = 'flex';
 
         var totalValue = 0; // Variable to calculate the total value
 

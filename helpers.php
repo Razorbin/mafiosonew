@@ -25,3 +25,11 @@ function bigNumbers(int $number) {
     
     return $format;
 }
+
+function number($amount){
+    if (!is_numeric($amount) || $amount == null || $amount == '') {
+        return 0;
+    } else {
+        return number_format($amount, 0, '.', ' ');
+    }
+}

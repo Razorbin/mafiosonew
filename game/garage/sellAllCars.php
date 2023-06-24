@@ -1,7 +1,7 @@
 <?php
 
-
 include '../../db/db.php';
+include '../../helpers.php';
 
 $carValue = [
   1000000, 800000, 500000, 600000, 900000, 700000, 750000, 400000, 350000, 450000,
@@ -28,5 +28,5 @@ $pdo->prepare($sql)->execute([$totalValue, $_SESSION['ID']]);
 $sql = "DELETE FROM cars WHERE acc_id = ?";
 $pdo->prepare($sql)->execute([$_SESSION['ID']]);
 
-$response = "Du solgte " . $totalCars . " biler for " . $totalValue . ",-";
+$response = "Du solgte " . number($totalCars) . " biler for " . number($totalValue) . ",-";
 echo $response;
