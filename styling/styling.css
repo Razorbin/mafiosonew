@@ -874,3 +874,7 @@ tr td {
   font-size: 12px;
   max-width: 300px;
 }
+
+.pointer-hover:hover {
+  cursor: pointer;
+}
