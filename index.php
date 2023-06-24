@@ -55,6 +55,7 @@ include 'helpers.php';
             <?php include 'content/livechat.php' ?>
         </div>
         <script src="js/checkConnection.js"></script>
+        <script src="js/numberFormat.js"></script>
         <script src="js/suggestions.js"></script>
         <script src="js/snackbar.js"></script>
         <script src="js/livechat.js"></script>

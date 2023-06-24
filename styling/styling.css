@@ -215,7 +215,6 @@ a:hover {
 .leftMenu,
 .rightMenu,
 .game {
-  height: 500px;
   background-color: #131313;
   border-radius: 8px;
   border: 1px solid #242424;
@@ -228,6 +227,7 @@ a:hover {
   display: flex;
   flex-direction: column;
   min-width: 216px;
+  height: 480px;
 }
 
 .leftMenu {
@@ -365,6 +365,10 @@ a:hover {
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+.aifs {
+  align-items: flex-start;
 }
 
 .snackbar-container {

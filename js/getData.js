@@ -1,8 +1,4 @@
 $(document).ready(function () {
-  function formatNumberWithSpaces(number) {
-    return number.toLocaleString("no-NO");
-  }
-
   // Function to fetch the data and update the elements
   function updateData() {
     $.ajax({
