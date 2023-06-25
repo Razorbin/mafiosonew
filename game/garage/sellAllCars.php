@@ -16,9 +16,8 @@ $totalValue = 0;
 $totalCars = count($cars);
 
 foreach ($cars as $car) {
-  $carIndex = $car['car'] - 1; // Assuming the car column represents the index of the car in the $carValue array
-  if (isset($carValue[$carIndex])) {
-    $totalValue += $carValue[$carIndex];
+  if (isset($carValue[$car['car']])) {
+    $totalValue += $carValue[$car['car']];
   }
 }
 

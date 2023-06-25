@@ -2,8 +2,6 @@
 
 include '../../db/db.php';
 
-include '../../db/db.php';
-
 $cities = ['Palermo', 'New York City', 'Medellin', 'Napoli', 'Chicago', 'Bangkok'];
 $carsArr = [
     'Tesla Model X',

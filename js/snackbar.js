@@ -51,12 +51,41 @@ function newSnackbar(text, type) {
 
   var el = document.createElement("div");
   el.className = "snackbar" + " " + type;
-  el.innerHTML = text;
+
+  // Set display:flex and gap:10px
+  el.style.display = "flex";
+  el.style.alignItems = "center";
+  el.style.gap = "10px";
+
+  // Create icon elements
+  var iconStart = document.createElement("iconify-icon");
+  iconStart.setAttribute("icon", "simple-line-icons:check");
+  el.appendChild(iconStart);
+
+  // Create text element
+  var textElement = document.createElement("span");
+  textElement.textContent = text;
+  el.appendChild(textElement);
+
+  // Create close icon element
+  var closeIcon = document.createElement("iconify-icon");
+  closeIcon.setAttribute("id", "close-icon");
+  closeIcon.className = "clickableIcon icon textSecondary";
+  closeIcon.setAttribute("icon", "ic:baseline-close");
+  el.appendChild(closeIcon);
 
   container.appendChild(el);
 
   removeOldestSnackbar();
   fadeIn(el);
+
+  // Add click event listener to close-icon
+  closeIcon.addEventListener("click", function () {
+    el.style.opacity = 0; // Set opacity to 0 for a smooth fade out effect
+    setTimeout(function () {
+      removeSnackbar(el);
+    }, 500); // Wait for 500ms before removing the snackbar element completely
+  });
 
   setTimeout(function () {
     el.style.opacity = 0; // Set opacity to 0 for a smooth fade out effect

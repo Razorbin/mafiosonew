@@ -152,14 +152,39 @@ function sendAjaxRequest(url) {
   xhr.send();
 }
 
-document.getElementById("allIn").addEventListener("click", function() {
-    sendAjaxRequest("game/bank/moneyAllIn.php");
+$(document).ready(function () {
+  $('#allIn').click(function () {
+      $.ajax({
+          url: 'game/bank/moneyAllIn.php',
+          type: 'POST',
+          data: {},
+          success: function (response) {
+              runGetData();
+              newSnackbar(response, 'success'); // Use response here as a feedback to the user
+          },
+          error: function (xhr, status, error) {
+              newSnackbar(error, 'error');
+          }
+      });
+  });
 });
 
-document.getElementById("allOut").addEventListener("click", function() {
-    sendAjaxRequest("game/bank/moneyAllOut.php");
+$(document).ready(function () {
+  $('#allOut').click(function () {
+      $.ajax({
+          url: 'game/bank/moneyAllOut.php',
+          type: 'POST',
+          data: {},
+          success: function (response) {
+              runGetData();
+              newSnackbar(response, 'success'); // Use response here as a feedback to the user
+          },
+          error: function (xhr, status, error) {
+              newSnackbar(error, 'error');
+          }
+      });
+  });
 });
-
 
   var button = document.getElementById("close-icon");
   var div = document.getElementById("stats");

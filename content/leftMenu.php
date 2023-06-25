@@ -19,7 +19,7 @@
         <span><?php echo bigNumbers(500) ?> / <?php echo bigNumbers(1500) ?></span>
     </div>
     <div class="leftMenuItem">
-        <div class="visitLink" data-page="storage" data-phpfile="game/storage/storage.php" data-targetdiv="#gameContent">Lager</div>
+        <div class="visitLink" data-page="storageUnit" data-phpfile="game/storageUnit/storageUnit.php" data-targetdiv="#gameContent">Lager</div>
         <span><?php echo bigNumbers(300) ?> / <?php echo bigNumbers(1200) ?></span>
     </div>
     <div class="leftMenuItem">

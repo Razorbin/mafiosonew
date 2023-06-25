@@ -1,16 +1,15 @@
 <div class="functionContainer df g5">
     <div class="gameBox df w-100 fdcol aifs">
-        <div id="noCars" style="display: none;">Du har ingen biler i din garasje. Utfør biltyveri for å skaffe biler.</div>
-        <table id="carTable" class="w-100" style="display: none;">
+        <div id="noItems" style="display: none;">Du har ingen ting i ditt lager. Utfør Brekk for å skaffe ting til lageret ditt.</div>
+        <table id="itemsTable" class="w-100" style="display: none;">
             <thead>
                 <tr>
-                    <th>Bil</th>
-                    <th>By</th>
+                    <th>Ting</th>
                     <th>Antall</th>
                     <th class="tar">Verdi</th>
                 </tr>
             </thead>
-            <tbody id="carTableBody"></tbody>
+            <tbody id="itemsTableBody"></tbody>
         </table>
         <div id="infoDiv" class="my-5 g5 df jcc aic w-100" style="display: none;">
             <div id="totalValueDiv"></div>
@@ -26,51 +25,46 @@ function runGetData() {
     document.body.appendChild(script);
 }
 
-function loadCars() {
-    fetch('game/garage/getGarageData.php')
+function loadItems() {
+    fetch('game/storageUnit/getStorageUnitData.php')
         .then(response => response.json())
-        .then(cars => {
-            var carTableBody = document.getElementById('carTableBody');
-            var carTable = document.getElementById('carTable');
+        .then(items => {
+            var itemsTableBody = document.getElementById('itemsTableBody');
+            var itemsTable = document.getElementById('itemsTable');
             var infoDiv = document.getElementById('infoDiv');
-            var noCarsDiv = document.getElementById('noCars');
+            var noItemsDiv = document.getElementById('noItems');
 
-            if (cars.length === 0) {
-                noCarsDiv.style.display = 'block'; // Show the "noCars" div
-                carTable.style.display = 'none'; // Hide the table
+            if (items.length === 0) {
+                noItemsDiv.style.display = 'block'; // Show the "noItems" div
+                itemsTable.style.display = 'none'; // Hide the table
                 infoDiv.style.display = 'none'; // Hide the infoDiv
             } else {
-                carTableBody.innerHTML = '';
+                itemsTableBody.innerHTML = '';
 
-                cars.forEach(function (car) {
+                items.forEach(function (item) {
                     var row = document.createElement('tr');
 
-                    var carCell = document.createElement('td');
-                    carCell.textContent = car.car;
-                    row.appendChild(carCell);
-
-                    var cityCell = document.createElement('td');
-                    cityCell.textContent = car.city;
-                    row.appendChild(cityCell);
+                    var itemCell = document.createElement('td');
+                    itemCell.textContent = item.name;
+                    row.appendChild(itemCell);
 
                     var amountCell = document.createElement('td');
-                    amountCell.textContent = car.amount;
+                    amountCell.textContent = item.amount;
                     row.appendChild(amountCell);
 
                     var valueCell = document.createElement('td');
-                    valueCell.textContent = formatNumberWithSpaces(car.total_value) + ',-';
+                    valueCell.textContent = formatNumberWithSpaces(item.total_value) + ',-';
                     row.appendChild(valueCell);
                     valueCell.classList.add('tar');
 
-                    carTableBody.appendChild(row);
+                    itemsTableBody.appendChild(row);
                 });
 
-                noCarsDiv.style.display = 'none'; // Hide the "noCars" div
-                carTable.style.display = 'table'; // Show the table
+                itemsTable.style.display = 'table'; // Show the table
                 infoDiv.style.display = 'flex'; // Show the infoDiv
 
-                var totalValue = cars.reduce(function (total, car) {
-                    return total + car.total_value;
+                var totalValue = items.reduce(function (total, item) {
+                    return total + item.total_value;
                 }, 0);
 
                 // Update the total value div with the calculated total value
@@ -81,17 +75,17 @@ function loadCars() {
         .catch(error => console.error('Error:', error));
 }
 
-loadCars();
+loadItems();
 
 $(document).ready(function () {
     $('#sellAll').click(function () {
         $.ajax({
-            url: 'game/garage/sellAllCars.php',
+            url: 'game/storageUnit/sellAllItems.php',
             type: 'POST',
             data: {},
             success: function (response) {
                 runGetData();
-                loadCars();
+                loadItems();
                 newSnackbar(response, 'success'); // Use response here as a feedback to the user
             },
             error: function (xhr, status, error) {
