@@ -1,5 +1,5 @@
 <div class="functionContainer df g5">
-  <div class="gameBox fb50 df aic">
+<div class="gameBox fb50 df aic">
     <div class="df g5 fdcol w-100">
       <div class="df aic g5 jcsb w-100">
         <p class="textSecondary">Din saldo</p>

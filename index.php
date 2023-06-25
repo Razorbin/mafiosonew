@@ -19,14 +19,10 @@ include 'helpers.php';
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
     <body>
-    <div class="overlay">
-        <div class="df jcc aic fdcol g5">
-            <iconify-icon class="headerIcon defaultBlue" icon="svg-spinners:wifi-fade"></iconify-icon>
-            <div class="overlay-text">Du er koblet fra internett. Vi prøver å koble deg til igjen.</div>
-            <div class="overlay-text-secondary"><i>Hvorfor ser jeg denne meldingen?</i> Mafioso er en SPA (Single Page Application) og krever internett
-            til en hver tid for å fungere. Vent mens vi kobler deg på nett, eller lukk mafioso og åpne igjen.</div>
-        </div>
-    </div>
+        <?php 
+            include 'content/noInternet.php';  
+            include 'content/gameClosed.php'; 
+        ?>
         <div class="main">
         <?php
 
@@ -55,6 +51,7 @@ include 'helpers.php';
             <?php include 'content/livechat.php' ?>
         </div>
         <script src="js/checkConnection.js"></script>
+        <script src="js/checkClosed.js"></script>
         <script src="js/numberFormat.js"></script>
         <script src="js/suggestions.js"></script>
         <script src="js/snackbar.js"></script>

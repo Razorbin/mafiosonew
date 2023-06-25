@@ -27,6 +27,12 @@ $(document).ready(function () {
         $("#playersOnline2").text(response.playersOnline);
         $("#playersInJail").text(response.playersInJail);
         $("#interests").text(formattedInterests);
+        $("#rank").text(response.rank);
+        $("#progressPercentage").text(response.progress.toFixed(1) + " %");
+        $("#progressExp").text(formatNumberWithSpaces(response.exp) + " EXP");
+
+        var progressPercentage = response.progress;
+        $("#rankbar").css("width", progressPercentage.toFixed(1) + "%");
       },
     });
   }

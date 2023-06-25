@@ -56,3 +56,5 @@ function getChatMessages() {
 // Fetch chat messages initially and then poll for new messages every second
 getChatMessages();
 setInterval(getChatMessages, 5000);
+
+$("#chatBox").scrollTop($("#chatBox")[0].scrollHeight);

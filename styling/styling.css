@@ -848,7 +848,8 @@ tr td {
   padding: 5px 0px;
 }
 
-.overlay {
+.overlay,
+.overlay-closed {
   position: fixed;
   top: 0;
   left: 0;

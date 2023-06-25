@@ -1,10 +1,11 @@
 <?php
 
 include '../db/db.php';
+include '../functions/ranks.php';
 
 $cities = ['Oslo', 'New York'];
 
-$stmt = $pdo->prepare('SELECT money, bankBalance, bullets, points, city FROM user WHERE id = :id');
+$stmt = $pdo->prepare('SELECT exp, money, bankBalance, bullets, points, city FROM user WHERE id = :id');
 $stmt->execute(['id' => $_SESSION['ID']]);
 $user = $stmt->fetch();
 
@@ -16,6 +17,7 @@ $city = $cities[$user['city']];
 $family = 'Cosa Nostra';
 $playersOnline = 15;
 $playersInJail = 0;
+$exp = $user['exp'];
 
 $data = [
   'balance' => $balance,
@@ -25,7 +27,10 @@ $data = [
   'city' => $city,
   'family' => $family,
   'playersOnline' => $playersOnline,
-  'playersInJail' => $playersInJail
+  'playersInJail' => $playersInJail,
+  'rank' => get_rank($exp),
+  'progress' => progress($exp),
+  'exp' => $exp
 ];
 
 echo json_encode($data);
