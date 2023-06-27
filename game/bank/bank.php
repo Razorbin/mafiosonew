@@ -49,7 +49,7 @@
       <div class="df aic g5">
         <div class="avatar"></div>
         <div class="userInfo">
-          <h3>Skitzo</h3>
+          <h3 class="pointer-hover visitLink" data-page="profile&user=skitzo" data-phpfile="game/profile/profile.php?user=skitzo" data-targetdiv="#gameContent">Skitzo</h3>
           <p>4 juni 2023</p>
         </div>
       </div>
@@ -62,7 +62,7 @@
       <div class="df aic g5">
         <div class="avatar"></div>
         <div class="userInfo">
-          <h3>Skitzo</h3>
+          <h3 class="pointer-hover visitLink" data-page="profile&user=skitzo" data-phpfile="game/profile/profile.php?user=skitzo" data-targetdiv="#gameContent">Skitzo</h3>
           <p>4 juni 2023</p>
         </div>
       </div>
@@ -75,7 +75,7 @@
       <div class="df aic g5">
         <div class="avatar"></div>
         <div class="userInfo">
-          <h3>Skitzo</h3>
+          <h3 class="pointer-hover visitLink" data-page="profile&user=skitzo" data-phpfile="game/profile/profile.php?user=skitzo" data-targetdiv="#gameContent">Skitzo</h3>
           <p>4 juni 2023</p>
         </div>
       </div>
@@ -124,9 +124,7 @@
   </div>
 </div>
 
-
 <script>
-
 
 function runGetData() {
   var script = document.createElement('script');

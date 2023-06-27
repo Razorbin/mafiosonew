@@ -487,8 +487,24 @@ h6 {
   flex-grow: 1;
 }
 
+.fb70 {
+  flex-basis: 70%;
+}
+
+.fb60 {
+  flex-basis: 60%;
+}
+
 .fb50 {
   flex-basis: 50%;
+}
+
+.fb40 {
+  flex-basis: 40%;
+}
+
+.fb30 {
+  flex-basis: 30%;
 }
 
 .w-100 {
@@ -515,6 +531,14 @@ h6 {
   padding: 5px;
 }
 
+.pt-10 {
+  padding-top: 10px;
+}
+
+.pb-10 {
+  padding-bottom: 10px;
+}
+
 input[type="submit"] {
   background-color: #262627;
   border-radius: 5px;
@@ -528,6 +552,13 @@ input[type="submit"] {
 input[type="submit"]:hover {
   cursor: pointer;
   background-color: #454545;
+}
+
+input[type="submit"]:disabled,
+input[type="submit"][disabled] {
+  background-color: #555555;
+  color: #353535;
+  cursor: not-allowed;
 }
 
 .icon {
@@ -877,5 +908,23 @@ tr td {
 }
 
 .pointer-hover:hover {
+  cursor: pointer;
+}
+
+.divider-bottom {
+  border-bottom: 1px solid #242424;
+}
+
+.divider-top {
+  border-top: 1px solid #242424;
+}
+
+.clickable-tr {
+  height: 20px;
+  transition: 0.2s;
+}
+
+.clickable-tr:hover {
+  color: var(--default-blue);
   cursor: pointer;
 }
