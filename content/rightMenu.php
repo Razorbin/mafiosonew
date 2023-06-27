@@ -8,7 +8,7 @@ include 'functions/ranks.php'
     <div class="gameBox">
         <div class="df g5 fdcol">
             <div class="df userInfo jcsb">
-                <h5>Sktitzo</h5>
+                <h5 class="pointer-hover visitLink" data-page="profile&user=skitzo" data-phpfile="game/profile/profile.php?user=skitzo" data-targetdiv="#gameContent">Skitzo</h5>
                 <span id="rank" class="textSecondary">NaN</span>
             </div>
             <div class="rankbar">
