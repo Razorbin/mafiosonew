@@ -1,20 +1,6 @@
 $(document).ready(function () {
-  var urlParams = new URLSearchParams(window.location.search);
-  var pageParam = urlParams.get("page");
-
-  if (pageParam) {
-    var targetDiv = "#gameContent";
-    var phpFile = "game/" + pageParam + "/" + pageParam + ".php";
-
-    $.ajax({
-      url: phpFile,
-      success: function (result) {
-        $(targetDiv).html(result);
-      },
-    });
-  }
-
-  $(".visitLink").click(function () {
+  // Event delegation for click event
+  $(document).on("click", ".visitLink", function () {
     var phpFile = $(this).data("phpfile");
     var targetDiv = $(this).data("targetdiv");
     var page = $(this).data("page");
@@ -26,9 +12,26 @@ $(document).ready(function () {
       url: phpFile,
       success: function (result) {
         $(targetDiv).html(result);
+        executeScriptInDiv(targetDiv); // Execute JavaScript code within the loaded content
       },
     });
   });
+
+  var urlParams = new URLSearchParams(window.location.search);
+  var pageParam = urlParams.get("page");
+
+  if (pageParam) {
+    var targetDiv = "#gameContent";
+    var phpFile = "game/" + pageParam + "/" + pageParam + ".php";
+
+    $.ajax({
+      url: phpFile,
+      success: function (result) {
+        $(targetDiv).html(result);
+        executeScriptInDiv(targetDiv); // Execute JavaScript code within the loaded content
+      },
+    });
+  }
 
   // Handle the browser's back/forward buttons
   window.onpopstate = function (event) {
@@ -41,8 +44,18 @@ $(document).ready(function () {
         url: phpFile,
         success: function (result) {
           $(targetDiv).html(result);
+          executeScriptInDiv(targetDiv); // Execute JavaScript code within the loaded content
         },
       });
     }
   };
+
+  // Function to execute JavaScript code within a specified div
+  function executeScriptInDiv(targetDiv) {
+    $(targetDiv)
+      .find("script")
+      .each(function () {
+        eval($(this).text());
+      });
+  }
 });

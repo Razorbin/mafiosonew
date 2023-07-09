@@ -60,6 +60,9 @@
         <div class="visitLink">Lotto</div>
     </div>
     <div class="leftMenuItem">
+        <div class="visitLink" data-page="cases" data-phpfile="game/cases/cases.php" data-targetdiv="#gameContent">Kasseåpning</div>
+    </div>
+    <div class="leftMenuItem">
         <div class="visitLink">Kast mynt</div>
     </div>
     <div class="leftMenuItem">

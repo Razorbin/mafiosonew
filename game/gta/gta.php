@@ -75,23 +75,3 @@
         </div>
     </div>
 </div>
-
-<script>
-    $(document).ready(function () {
-      $(".visitLink").click(function () {
-        var phpFile = $(this).data("phpfile");
-        var targetDiv = $(this).data("targetdiv");
-        var page = $(this).data("page");
-
-        // Update the URL without refreshing the page
-        history.pushState({ page: page }, "", "?page=" + page);
-
-        $.ajax({
-          url: phpFile,
-          success: function (result) {
-            $(targetDiv).html(result);
-          },
-        });
-      });
-    });
-</script>

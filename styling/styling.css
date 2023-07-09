@@ -924,7 +924,12 @@ tr td {
   transition: 0.2s;
 }
 
+.clickable-tr td {
+  padding: 0px 5px;
+}
+
 .clickable-tr:hover {
-  color: var(--default-blue);
+  background-color: var(--default-blue);
+  color: black;
   cursor: pointer;
 }

@@ -60,5 +60,8 @@ include 'helpers.php';
         <script src="js/router.js"></script>
         <script src="js/stock.js"></script>
         <script src="js/date.js"></script>
+        
     </body>
 </html>
+
+

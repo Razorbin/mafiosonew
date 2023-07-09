@@ -132,55 +132,55 @@ function runGetData() {
   document.body.appendChild(script);
 }
 
-function sendAjaxRequest(url) {
-  var xhr = new XMLHttpRequest();
-  xhr.open("POST", url, true);
-  xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-  xhr.onreadystatechange = function() {
-      if (xhr.readyState === XMLHttpRequest.DONE) {
-          if (xhr.status === 200) {
-              // Request completed successfully
-              runGetData();
-          } else {
-              // Request encountered an error
-              console.error("Request error:", xhr.status);
-          }
-      }
-  };
-  xhr.send();
-}
-
 $(document).ready(function () {
-  $('#allIn').click(function () {
+  $('#allIn').off('click').on('click', function () {
+    var $this = $(this);
+
+    if (!$this.data('clicked')) {
+      $this.data('clicked', true);
+
       $.ajax({
-          url: 'game/bank/moneyAllIn.php',
-          type: 'POST',
-          data: {},
-          success: function (response) {
-              runGetData();
-              newSnackbar(response, 'success'); // Use response here as a feedback to the user
-          },
-          error: function (xhr, status, error) {
-              newSnackbar(error, 'error');
-          }
+        url: 'game/bank/moneyAllIn.php',
+        type: 'POST',
+        data: {},
+        success: function (response) {
+          runGetData();
+          newSnackbar(response, 'success'); // Use response here as feedback to the user
+        },
+        error: function (xhr, status, error) {
+          newSnackbar(error, 'error');
+        },
+        complete: function () {
+          $this.data('clicked', false);
+        }
       });
+    }
   });
 });
 
 $(document).ready(function () {
-  $('#allOut').click(function () {
+  $('#allOut').off('click').on('click', function () {
+    var $this = $(this);
+
+    if (!$this.data('clicked')) {
+      $this.data('clicked', true);
+
       $.ajax({
-          url: 'game/bank/moneyAllOut.php',
-          type: 'POST',
-          data: {},
-          success: function (response) {
-              runGetData();
-              newSnackbar(response, 'success'); // Use response here as a feedback to the user
-          },
-          error: function (xhr, status, error) {
-              newSnackbar(error, 'error');
-          }
+        url: 'game/bank/moneyAllOut.php',
+        type: 'POST',
+        data: {},
+        success: function (response) {
+          runGetData();
+          newSnackbar(response, 'success'); // Use response here as feedback to the user
+        },
+        error: function (xhr, status, error) {
+          newSnackbar(error, 'error');
+        },
+        complete: function () {
+          $this.data('clicked', false);
+        }
       });
+    }
   });
 });
 
