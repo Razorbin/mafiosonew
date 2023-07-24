@@ -58,6 +58,7 @@ include 'helpers.php';
         <script src="js/livechat.js"></script>
         <script src="js/getData.js"></script>
         <script src="js/router.js"></script>
+        <script src="js/alerts.js"></script>
         <script src="js/stock.js"></script>
         <script src="js/date.js"></script>
         

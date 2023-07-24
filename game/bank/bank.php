@@ -1,5 +1,9 @@
+<div id="feedback" class="mt-5">
+
+</div>
+
 <div class="functionContainer df g5">
-<div class="gameBox fb50 df aic">
+  <div class="gameBox fb50 df aic">
     <div class="df g5 fdcol w-100">
       <div class="df aic g5 jcsb w-100">
         <p class="textSecondary">Din saldo</p>
@@ -143,12 +147,14 @@ $(document).ready(function () {
         url: 'game/bank/moneyAllIn.php',
         type: 'POST',
         data: {},
+        dataType: 'json', // Expect JSON response
         success: function (response) {
           runGetData();
-          newSnackbar(response, 'success'); // Use response here as feedback to the user
+          // newSnackbar(response, 'success'); // Use response here as feedback to the user
+          createFeedbackDiv(response.message, response.type);
         },
         error: function (xhr, status, error) {
-          newSnackbar(error, 'error');
+          // newSnackbar(error, 'error');
         },
         complete: function () {
           $this.data('clicked', false);
@@ -169,9 +175,10 @@ $(document).ready(function () {
         url: 'game/bank/moneyAllOut.php',
         type: 'POST',
         data: {},
+        dataType: 'json',
         success: function (response) {
           runGetData();
-          newSnackbar(response, 'success'); // Use response here as feedback to the user
+          createFeedbackDiv(response.message, response.type);
         },
         error: function (xhr, status, error) {
           newSnackbar(error, 'error');

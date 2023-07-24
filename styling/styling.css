@@ -933,3 +933,19 @@ tr td {
   color: black;
   cursor: pointer;
 }
+
+.feedback {
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 11px;
+}
+
+.feedback-success {
+  background-color: #339900;
+  color: white;
+}
+
+.feedback-warning {
+  background-color: #cc3300;
+  color: white;
+}

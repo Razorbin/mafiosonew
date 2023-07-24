@@ -10,5 +10,17 @@ $user = $stmt->fetch();
 $sql = "UPDATE user SET bankBalance = bankBalance + ?, money = 0 WHERE id = ?";
 $pdo->prepare($sql)->execute([$user['money'], $_SESSION['ID']]);
 
-$response = "Du satt inn " . number($user['money']) . ",- i banken";
-echo $response;
+if($user['money'] <= 0){
+    $response = array(
+        'message' => "Du har ingen penger å sette inn",
+        'type' => 'warning'
+        );
+    echo json_encode($response);
+} else {
+    $response = array(
+    'message' => "Du satt inn " . number($user['money']) . ",- i banken",
+    'type' => 'success'
+    );
+      
+    echo json_encode($response);
+}
