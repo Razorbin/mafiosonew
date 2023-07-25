@@ -946,9 +946,11 @@ tr td {
 .feedback-success {
   background-color: rgb(12, 19, 13);
   color: rgb(204, 232, 205);
+  border: 1px solid rgba(204, 232, 205, 0.1);
 }
 
 .feedback-warning {
   background-color: rgb(22, 11, 11);
   color: rgb(244, 199, 199);
+  border: 1px solid rgba(244, 199, 199, 0.1);
 }

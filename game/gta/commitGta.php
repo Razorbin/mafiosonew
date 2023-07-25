@@ -3,8 +3,11 @@
 include '../../db/db.php';
 include '../../functions/cars.php';
 
-$carOutcome = mt_rand(0, 19);
+
+
+
 $index = $_POST['clickedIndex'];
+$carOutcome = mt_rand(0, 19);
 
 $stmt = $pdo->prepare('SELECT CD_time FROM cooldown WHERE CD_acc_id = :id AND CD_type = "gta"');
 $stmt->execute(['id' => $_SESSION['ID']]);
@@ -20,8 +23,8 @@ if($cd_gta > time()){
     echo json_encode($response);
 } else {
     if($cd_gta){
-        $sql = "UPDATE cooldown SET CD_time = CD_time + ? WHERE CD_type = 'gta' AND CD_acc_id = ?";
-        $pdo->prepare($sql)->execute([$cooldown[$index], $_SESSION['ID']]);
+        $sql = "UPDATE cooldown SET CD_time = ? WHERE CD_type = 'gta' AND CD_acc_id = ?";
+        $pdo->prepare($sql)->execute([time() + $cooldown[$index], $_SESSION['ID']]);
     } else {
         $sql = "INSERT INTO cooldown (CD_acc_id, CD_type, CD_time) VALUES (?,?,?)";
         $stmt= $pdo->prepare($sql);
