@@ -1,3 +1,5 @@
+<div id="feedback" class="mt-5"></div>
+
 <div class="functionContainer df g5">
     <div class="fb60" style="align-self: flex-start;">
         <div class="gameBox fb60">
@@ -75,3 +77,35 @@
         </div>
     </div>
 </div>
+
+<script>
+$(document).ready(function () {
+  $('.clickable-tr').off('click').on('click', function () {
+    var $this = $(this);
+    var clickedIndex = $this.index(); // Get the index of the clicked <tr> among its siblings
+
+    if (!$this.data('clicked')) {
+      $this.data('clicked', true);
+
+      $.ajax({
+        url: 'game/gta/commitGta.php',
+        type: 'POST',
+        data: {
+          clickedIndex: clickedIndex, // Send the index as data to the server-side
+        },
+        dataType: 'json',
+        success: function (response) {
+          createFeedbackDiv(response.message, response.type);
+        },
+        error: function (xhr, status, error) {
+          newSnackbar(error, 'error');
+        },
+        complete: function () {
+          $this.data('clicked', false);
+        }
+      });
+    }
+  });
+});
+
+</script>

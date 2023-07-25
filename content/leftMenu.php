@@ -16,12 +16,14 @@
     </div>
     <div class="leftMenuItem">
         <div class="visitLink" data-page="garage" data-phpfile="game/garage/garage.php" data-targetdiv="#gameContent">Garasje</div>
-        <span><?php echo bigNumbers(500) ?> / <?php echo bigNumbers(1500) ?></span>
+        <span><span id="cars">NaN</span> / <span id="maxCars">NaN</span></span>
     </div>
     <div class="leftMenuItem">
         <div class="visitLink" data-page="storageUnit" data-phpfile="game/storageUnit/storageUnit.php" data-targetdiv="#gameContent">Lager</div>
-        <span><?php echo bigNumbers(300) ?> / <?php echo bigNumbers(1200) ?></span>
+        <span><span id="things">NaN</span> / <span id="maxThings">NaN</span></span>
+
     </div>
+
     <div class="leftMenuItem">
         <div class="visitLink" data-page="airport" data-phpfile="game/airport/airport.php" data-targetdiv="#gameContent">Flyplass</div>
         <span>Klar</span>

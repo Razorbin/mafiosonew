@@ -21,7 +21,7 @@ $(document).ready(function () {
         $("#bankBalance").text(formattedBankBalance);
         $("#bullets").text(formattedBullets);
         $("#points").text(formattedPoints);
-        $("#city").text(response.city);
+        $("#city").text(response.city + " " + response.cityTax);
         $("#family").text(response.family);
         $("#playersOnline").text(response.playersOnline);
         $("#playersOnline2").text(response.playersOnline);
@@ -30,6 +30,12 @@ $(document).ready(function () {
         $("#rank").text(response.rank);
         $("#progressPercentage").text(response.progress.toFixed(1) + " %");
         $("#progressExp").text(formatNumberWithSpaces(response.exp) + " EXP");
+
+        $("#cars").text(formatNumberWithSpaces(response.cars));
+        $("#maxCars").text(formatNumberWithSpaces(response.maxCars));
+
+        $("#things").text(formatNumberWithSpaces(response.things));
+        $("#maxThings").text(formatNumberWithSpaces(response.maxThings));
 
         var progressPercentage = response.progress;
         $("#rankbar").css("width", progressPercentage.toFixed(1) + "%");

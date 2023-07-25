@@ -1,3 +1,5 @@
+<div id="feedback" class="mt-5"></div>
+
 <div class="functionContainer df g5">
     <div class="gameBox df w-100 fdcol aifs">
         <div id="noCars" style="display: none;">Du har ingen biler i din garasje. Utfør biltyveri for å skaffe biler.</div>
@@ -85,19 +87,32 @@ loadCars();
 
 $(document).ready(function () {
     $('#sellAll').click(function () {
-        $.ajax({
-            url: 'game/garage/sellAllCars.php',
-            type: 'POST',
-            data: {},
-            success: function (response) {
-                runGetData();
-                loadCars();
-                newSnackbar(response, 'success'); // Use response here as a feedback to the user
-            },
-            error: function (xhr, status, error) {
-                newSnackbar(error, 'error');
-            }
-        });
+        var $this = $(this);
+
+        if (!$this.data('clicked')) {
+            $this.data('clicked', true);
+
+            $.ajax({
+                url: 'game/garage/sellAllCars.php',
+                type: 'POST',
+                data: {},
+                dataType: 'json', // Expect JSON response
+                success: function (response) {
+                    runGetData();
+                    loadCars();
+                    // newSnackbar(response, 'success'); // Use response here as a feedback to the user
+                    createFeedbackDiv(response.message, response.type);
+                },
+                error: function (xhr, status, error) {
+                    newSnackbar(error, 'error');
+                },
+                complete: function () {
+                $this.data('clicked', false);
+                }
+            });
+        }
     });
 });
+
 </script>
+

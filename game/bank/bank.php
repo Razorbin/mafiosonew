@@ -1,6 +1,4 @@
-<div id="feedback" class="mt-5">
-
-</div>
+<div id="feedback" class="mt-5"></div>
 
 <div class="functionContainer df g5">
   <div class="gameBox fb50 df aic">

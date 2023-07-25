@@ -22,6 +22,10 @@ html {
   box-sizing: border-box; /* Opera/IE 8+ */
 }
 
+table {
+  border-collapse: collapse;
+}
+
 a {
   color: grey;
   text-decoration: none;
@@ -920,7 +924,7 @@ tr td {
 }
 
 .clickable-tr {
-  height: 20px;
+  height: 25px;
   transition: 0.2s;
 }
 
@@ -929,8 +933,7 @@ tr td {
 }
 
 .clickable-tr:hover {
-  background-color: var(--default-blue);
-  color: black;
+  color: var(--default-blue);
   cursor: pointer;
 }
 
@@ -941,11 +944,11 @@ tr td {
 }
 
 .feedback-success {
-  background-color: #339900;
-  color: white;
+  background-color: rgb(12, 19, 13);
+  color: rgb(204, 232, 205);
 }
 
 .feedback-warning {
-  background-color: #cc3300;
-  color: white;
+  background-color: rgb(22, 11, 11);
+  color: rgb(244, 199, 199);
 }
