@@ -3,9 +3,6 @@
 include '../../db/db.php';
 include '../../functions/cars.php';
 
-
-
-
 $index = $_POST['clickedIndex'];
 $carOutcome = mt_rand(0, 19);
 

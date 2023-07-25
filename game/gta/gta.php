@@ -79,6 +79,13 @@
 </div>
 
 <script>
+
+function runGetData() {
+  var script = document.createElement('script');
+  script.src = 'js/getData.js';
+  document.body.appendChild(script);
+}
+
 $(document).ready(function () {
   $('.clickable-tr').off('click').on('click', function () {
     var $this = $(this);
@@ -96,6 +103,7 @@ $(document).ready(function () {
         dataType: 'json',
         success: function (response) {
           createFeedbackDiv(response.message, response.type);
+          runGetData();
         },
         error: function (xhr, status, error) {
           newSnackbar(error, 'error');
