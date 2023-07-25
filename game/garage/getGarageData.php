@@ -6,7 +6,7 @@ include '../../functions/cars.php';
 $cities = ['Palermo', 'New York City', 'Medellin', 'Napoli', 'Chicago', 'Bangkok'];
 
 $stmt = $pdo->prepare('SELECT car, city, COUNT(*) AS amount FROM cars WHERE acc_id = :id GROUP BY car, city');
-$stmt->execute(['id' => 1]);
+$stmt->execute(['id' => $_SESSION['ID']]);
 $cars = $stmt->fetchAll();
 
 $totalValue = 0;
