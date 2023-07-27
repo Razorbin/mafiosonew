@@ -10,4 +10,4 @@ function checkMafiosoClosed() {
 
 checkMafiosoClosed();
 
-setInterval(checkMafiosoClosed, 5000);
+setInterval(checkMafiosoClosed, 1000);

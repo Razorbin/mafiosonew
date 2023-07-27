@@ -1,6 +1,10 @@
 <?php
 
-include 'functions/ranks.php' 
+include 'functions/ranks.php';
+
+$stmt = $pdo->prepare('SELECT username FROM user WHERE id = :id');
+$stmt->execute(['id' => $_SESSION['ID']]);
+$username = $stmt->fetchColumn();
 
 ?>
 
@@ -8,7 +12,7 @@ include 'functions/ranks.php'
     <div class="gameBox">
         <div class="df g5 fdcol">
             <div class="df userInfo jcsb">
-                <h5 class="pointer-hover visitLink" data-page="profile&user=skitzo" data-phpfile="game/profile/profile.php?user=skitzo" data-targetdiv="#gameContent">Skitzo</h5>
+                <h5 class="pointer-hover visitLink" data-page="profile&user=<?= $username ?>" data-phpfile="game/profile/profile.php?user=<?= $username ?>" data-targetdiv="#gameContent"><?= $username ?></h5>
                 <span id="rank" class="textSecondary">NaN</span>
             </div>
             <div class="rankbar">

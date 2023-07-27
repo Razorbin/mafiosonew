@@ -68,9 +68,7 @@ var gtaIcon = document.getElementById('gtaIcon');
         <div class="gameBox fb60 mt-5 g5 df fdcol">
             <b>Dirkesett</b>
             <span class="textSecondary">
-                Et dirkesett kan benyttes for å få 50% mer sjanse for å stjele bilene Rolls Royce Wraith, 
-                1955 Mercedes 300SL Gullwing, Bugatti La Voiture Noire eller 
-                Rolls-Royce Boat Tail. Et dirkesett kan du få ved å utføre 
+                Et dirkesett kan benyttes for å få 50% mer sjanse for å stjele bilen Ferrari 488 GTB. Et dirkesett kan du få ved å utføre 
                 kriminelle handlinger.
             </span>
             <span class="textSecondary">Et dirkesett varer i 1 time</span>
