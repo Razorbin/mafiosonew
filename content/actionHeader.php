@@ -1,3 +1,10 @@
+<?php
+
+include 'db/db.php';
+
+?>
+<script src="js/hideAndShow.js"></script>
+
 <div class="actionContainer">
     <div class="action visitLink prevent-select" data-page="moneyCollection" data-phpfile="game/moneyCollection/moneyCollection.php" data-targetdiv="#gameContent">
         <div class="actionIcon readyIcon">
@@ -26,15 +33,49 @@
             <p class="actionTextSecondary">55s</p>
         </div>
     </div>
+
+
+    <!-- GTA START -->
+    <?php
+
+    $stmt = $pdo->prepare('SELECT CD_time FROM cooldown WHERE CD_acc_id = :id AND CD_type = "gta"');
+    $stmt->execute(['id' => $_SESSION['ID']]);
+    $cd_gta = $stmt->fetchColumn();
+
+    $hasGtaCooldown = $cd_gta > time();
+    $cooldownTimeLeft = $cd_gta - time();
+
+    ?>
     <div class="action visitLink prevent-select" data-page="gta" data-phpfile="game/gta/gta.php" data-targetdiv="#gameContent">
-        <div class="actionIcon">
+        <div id="gtaIcon" class="actionIcon <?= !$hasGtaCooldown ? 'readyIcon' : ''; ?>">
         <iconify-icon icon="streamline:money-cash-coins-stack-accounting-billing-payment-stack-cash-coins-currency-money-finance"></iconify-icon>
         </div>
         <div class="actionText">
             <p class="actionTextPrimary">Biltyveri</p>
-            <p class="actionTextSecondary">55s</p>
+            <p class="actionTextSecondary">
+                <span class="<?= !$hasGtaCooldown ? 'readyText' : ''; ?>" id="gtaCooldown">
+                <?= $hasGtaCooldown ? $cooldownTimeLeft.'s' : 'Klar'; ?>
+            </span>
+            </p>
         </div>
     </div>
+    <script>
+
+    var gtaHeaderCooldown = document.getElementById('gtaCooldown');
+    var gtaIcon = document.getElementById('gtaIcon');  
+    
+    </script>
+    <?php if($hasGtaCooldown){ ?>
+    <script>
+
+        startCountdownHeader(gtaIcon, gtaHeaderCooldown, <?php echo $cooldownTimeLeft ?>);
+
+    </script>
+    <?php } ?>
+    <!-- GTA END -->
+
+
+
     <div class="action visitLink prevent-select" data-page="theft" data-phpfile="game/theft/theft.php" data-targetdiv="#gameContent">
         <div class="actionIcon">
         <iconify-icon icon="streamline:money-cash-coins-stack-accounting-billing-payment-stack-cash-coins-currency-money-finance"></iconify-icon>

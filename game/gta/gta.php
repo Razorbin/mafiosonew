@@ -1,9 +1,44 @@
 <div id="feedback" class="mt-5"></div>
 
+<?php
+
+include '../../db/db.php';
+
+$stmt = $pdo->prepare('SELECT CD_time FROM cooldown WHERE CD_acc_id = :id AND CD_type = "gta"');
+$stmt->execute(['id' => $_SESSION['ID']]);
+$cd_gta = $stmt->fetchColumn();
+
+$hasCooldown = $cd_gta > time();
+$cooldownTimeLeft = $cd_gta - time();
+
+?>
+
+<script>
+  
+var gtaDiv = document.getElementById('gtaDiv');
+var countdownDiv = document.getElementById('countdownDiv');
+var secondsCountdown = document.getElementById('secondsCountdown');
+var gtaCooldown = document.getElementById('gtaCooldown');
+var gtaIcon = document.getElementById('gtaIcon');  
+
+</script>
+
+<?php if($hasCooldown){ ?>
+<script>
+    hideAndShowDiv(gtaDiv, <?php echo $cooldownTimeLeft ?>);
+    showAndHideDiv(countdownDiv, <?php echo $cooldownTimeLeft ?>);
+    startCountdown(secondsCountdown, <?php echo $cooldownTimeLeft ?>);
+    startCountdownHeader(gtaIcon, gtaCooldown, <?php echo $cooldownTimeLeft ?>);
+</script>
+<?php } ?>
+
 <div class="functionContainer df g5">
     <div class="fb60" style="align-self: flex-start;">
         <div class="gameBox fb60">
-            <table class="w-100">
+            <div id="countdownDiv" class="container" style="display: <?php echo $hasCooldown ? 'block' : 'none'; ?>;">
+                <span>Du må vente <span id="secondsCountdown"><?php echo $cooldownTimeLeft; ?>s</span> før du kan utføre et nytt biltyveri!</span>
+            </div>
+            <table class="w-100" id="gtaDiv" style="display: <?php echo $hasCooldown ? 'none' : 'table'; ?>;">
                 <thead>
                     <tr>
                         <th>Handling</th>
@@ -103,6 +138,10 @@ $(document).ready(function () {
         dataType: 'json',
         success: function (response) {
           createFeedbackDiv(response.message, response.type);
+          hideAndShowDiv(gtaDiv, response.cooldown);
+          showAndHideDiv(countdownDiv, response.cooldown);
+          startCountdown(secondsCountdown, response.cooldown);
+          startCountdownHeader(gtaIcon, gtaCooldown, response.cooldown);
           runGetData();
         },
         error: function (xhr, status, error) {

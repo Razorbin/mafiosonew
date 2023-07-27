@@ -17,11 +17,12 @@ include 'helpers.php';
         <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
         <link rel="icon" type="image/x-icon" href="media/favicon-32x32.png">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        
     </head>
     <body>
         <?php 
-            include 'content/noInternet.php';  
-            include 'content/gameClosed.php'; 
+            include 'content/noInternet.php';
+            include 'content/gameClosed.php';
         ?>
         <div class="main">
         <?php

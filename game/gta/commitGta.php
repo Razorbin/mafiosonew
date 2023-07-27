@@ -34,7 +34,8 @@ if($cd_gta > time()){
 
     $response = array(
         'message' => 'Du stjal en '.$carsArr[$carOutcome],
-        'type' => 'success'
+        'type' => 'success',
+        'cooldown' => $cooldown[$index]
     );
     echo json_encode($response);
 }

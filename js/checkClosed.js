@@ -1,7 +1,5 @@
 function checkMafiosoClosed() {
-  var closed = false;
-
-  if (closed) {
+  if (false) {
     // Display the overlay
     document.querySelector(".overlay-closed").style.display = "flex";
   } else {
