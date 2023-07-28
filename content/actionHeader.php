@@ -8,26 +8,26 @@ include 'db/db.php';
 <div class="actionContainer">
     <div class="action visitLink prevent-select" data-page="moneyCollection" data-phpfile="game/moneyCollection/moneyCollection.php" data-targetdiv="#gameContent">
         <div class="actionIcon readyIcon">
-        <iconify-icon icon="streamline:money-cash-coins-stack-accounting-billing-payment-stack-cash-coins-currency-money-finance"></iconify-icon>
+            <iconify-icon icon="game-icons:shotgun-rounds"></iconify-icon>
         </div>
         <div class="actionText">
-            <p class="actionTextPrimary">Pengeinnkreving</p>
+            <p class="actionTextPrimary">Organisert krim</p>
             <p class="actionTextSecondary readyText">Klar</p>
         </div>
     </div>
     <div class="action visitLink prevent-select" data-page="streetrace" data-phpfile="game/streetrace/streetrace.php" data-targetdiv="#gameContent">
         <div class="actionIcon readyIcon">
-        <iconify-icon icon="streamline:money-cash-coins-stack-accounting-billing-payment-stack-cash-coins-currency-money-finance"></iconify-icon>
+            <iconify-icon icon="fontisto:drug-pack"></iconify-icon>    
         </div>
         <div class="actionText">
-            <p class="actionTextPrimary">Streetrace</p>
+            <p class="actionTextPrimary">Smugling</p>
             <p class="actionTextSecondary readyText">Klar</p>
         </div>
     </div>
     <div class="action visitLink prevent-select" data-page="crime" data-phpfile="game/crime/crime.php" data-targetdiv="#gameContent">
         <div class="actionIcon">
-        <iconify-icon icon="streamline:money-cash-coins-stack-accounting-billing-payment-stack-cash-coins-currency-money-finance"></iconify-icon>
-        </div>
+        <iconify-icon icon="game-icons:crime-scene-tape"></iconify-icon>    
+    </div>
         <div class="actionText">
             <p class="actionTextPrimary">Kriminalitet</p>
             <p class="actionTextSecondary">55s</p>
@@ -48,7 +48,7 @@ include 'db/db.php';
     ?>
     <div class="action visitLink prevent-select" data-page="gta" data-phpfile="game/gta/gta.php" data-targetdiv="#gameContent">
         <div id="gtaIcon" class="actionIcon <?= !$hasGtaCooldown ? 'readyIcon' : ''; ?>">
-        <iconify-icon icon="streamline:money-cash-coins-stack-accounting-billing-payment-stack-cash-coins-currency-money-finance"></iconify-icon>
+            <iconify-icon icon="game-icons:car-key"></iconify-icon>    
         </div>
         <div class="actionText">
             <p class="actionTextPrimary">Biltyveri</p>
@@ -88,7 +88,7 @@ include 'db/db.php';
     ?>
     <div class="action visitLink prevent-select" data-page="theft" data-phpfile="game/theft/theft.php" data-targetdiv="#gameContent">
         <div id="theftIcon" class="actionIcon <?= !$hasTheftCooldown ? 'readyIcon' : ''; ?>">
-        <iconify-icon icon="streamline:money-cash-coins-stack-accounting-billing-payment-stack-cash-coins-currency-money-finance"></iconify-icon>
+            <iconify-icon icon="game-icons:crowbar"></iconify-icon>    
         </div>
         <div class="actionText">
             <p class="actionTextPrimary">Brekk</p>
@@ -121,7 +121,8 @@ include 'db/db.php';
 
     <div class="action visitLink prevent-select" data-page="steal" data-phpfile="game/steal/steal.php" data-targetdiv="#gameContent">
         <div class="actionIcon">
-        <iconify-icon icon="streamline:money-cash-coins-stack-accounting-billing-payment-stack-cash-coins-currency-money-finance"></iconify-icon>
+            <!-- <iconify-icon icon="streamline:money-cash-coins-stack-accounting-billing-payment-stack-cash-coins-currency-money-finance"></iconify-icon> -->
+            <iconify-icon icon="game-icons:money-stack"></iconify-icon>
         </div>
         <div class="actionText">
             <p class="actionTextPrimary">Stjel</p>
@@ -130,7 +131,7 @@ include 'db/db.php';
     </div>
     <div class="action visitLink prevent-select" data-page="jail" data-phpfile="game/jail/jail.php" data-targetdiv="#gameContent">
         <div class="actionIcon">
-        <iconify-icon icon="streamline:money-cash-coins-stack-accounting-billing-payment-stack-cash-coins-currency-money-finance"></iconify-icon>
+            <iconify-icon icon="mdi:handcuffs"></iconify-icon>
         </div>
         <div class="actionText">
             <p class="actionTextPrimary">Fengsel</p>
