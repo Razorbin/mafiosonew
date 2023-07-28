@@ -34,7 +34,10 @@ var theftIcon = document.getElementById('theftIcon');
 
 <div class="functionContainer df g5">
     <div class="fb60" style="align-self: flex-start;">
-        <div class="gameBox fb60">
+        <div class="gameBox fb60 df aic">
+            <img src="media/brekk.png"/>
+        </div>
+        <div class="gameBox fb60 mt-5 g5 df fdcol">
             <div id="countdownDiv" class="container" style="display: <?php echo $hasCooldown ? 'block' : 'none'; ?>;">
                 <span>Du må vente <span id="secondsCountdown"><?php echo $cooldownTimeLeft; ?>s</span> før du kan utføre et nytt brekk!</span>
             </div>
@@ -65,6 +68,7 @@ var theftIcon = document.getElementById('theftIcon');
                 </tbody>
             </table>
         </div>
+
     </div>
     <div class="gameBox fb40" style="align-self: flex-start;">
         <div class="df g5 fdcol pb-10">

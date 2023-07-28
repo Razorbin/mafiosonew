@@ -107,7 +107,7 @@ $(document).ready(function () {
                     newSnackbar(error, 'error');
                 },
                 complete: function () {
-                $this.data('clicked', false);
+                    $this.data('clicked', false);
                 }
             });
         }

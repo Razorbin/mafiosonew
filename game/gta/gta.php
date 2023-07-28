@@ -34,9 +34,17 @@ var gtaIcon = document.getElementById('gtaIcon');
 
 <div class="functionContainer df g5">
     <div class="fb60" style="align-self: flex-start;">
-        <div class="gameBox fb60">
+        <div class="gameBox fb60 df aic">
+            <img src="media/gta.png"/>
+        </div>
+        <div class="gameBox fb60 mt-5 g5 df fdcol">
             <div id="countdownDiv" class="container" style="display: <?php echo $hasCooldown ? 'block' : 'none'; ?>;">
+            <div class="df fdrow g5 aic">
+                <div class="infoIcon defaultBlue">
+                    <iconify-icon icon="svg-spinners:clock"></iconify-icon>
+                </div>
                 <span>Du må vente <span id="secondsCountdown"><?php echo $cooldownTimeLeft; ?>s</span> før du kan utføre et nytt biltyveri!</span>
+            </div>
             </div>
             <table class="w-100" id="gtaDiv" style="display: <?php echo $hasCooldown ? 'none' : 'table'; ?>;">
                 <thead>

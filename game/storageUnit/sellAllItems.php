@@ -109,5 +109,9 @@ $pdo->prepare($sql)->execute([$totalValue, $_SESSION['ID']]);
 $sql = "DELETE FROM items WHERE acc_id = ?";
 $pdo->prepare($sql)->execute([$_SESSION['ID']]);
 
-$response = "Du solgte " . number($totalItems) . " ting for " . number($totalValue) . ",-";
-echo $response;
+$response = array(
+  'message' => "Du solgte " . number($totalItems) . " ting for " . number($totalValue) . ",-",
+  'type' => 'success'
+);
+    
+echo json_encode($response);
