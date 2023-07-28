@@ -13,6 +13,10 @@ $stmt = $pdo->prepare('SELECT count(*) FROM cars WHERE acc_id = :id');
 $stmt->execute(['id' => $_SESSION['ID']]);
 $carsUser = $stmt->fetchColumn();
 
+$stmt = $pdo->prepare('SELECT count(*) FROM items WHERE acc_id = :id');
+$stmt->execute(['id' => $_SESSION['ID']]);
+$itemsUser = $stmt->fetchColumn();
+
 $balance = $user['money'];
 $bankBalance = $user['bankBalance'];
 $bullets = $user['bullets'];
@@ -25,7 +29,7 @@ $playersInJail = 0;
 $exp = $user['exp'];
 $cars = $carsUser;
 $maxCars = 50;
-$things = 10;
+$things = $itemsUser;
 $maxthings = 50;
 
 $data = [

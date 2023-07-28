@@ -75,16 +75,50 @@ include 'db/db.php';
     <!-- GTA END -->
 
 
+    <!-- THEFT START -->
+    <?php
 
+    $stmt = $pdo->prepare('SELECT CD_time FROM cooldown WHERE CD_acc_id = :id AND CD_type = "theft"');
+    $stmt->execute(['id' => $_SESSION['ID']]);
+    $cd_theft = $stmt->fetchColumn();
+
+    $hasTheftCooldown = $cd_theft > time();
+    $cooldownTheftTimeLeft = $cd_theft - time();
+
+    ?>
     <div class="action visitLink prevent-select" data-page="theft" data-phpfile="game/theft/theft.php" data-targetdiv="#gameContent">
-        <div class="actionIcon">
+        <div id="theftIcon" class="actionIcon <?= !$hasTheftCooldown ? 'readyIcon' : ''; ?>">
         <iconify-icon icon="streamline:money-cash-coins-stack-accounting-billing-payment-stack-cash-coins-currency-money-finance"></iconify-icon>
         </div>
         <div class="actionText">
             <p class="actionTextPrimary">Brekk</p>
-            <p class="actionTextSecondary">55s</p>
+            <p class="actionTextSecondary">
+            <span class="<?= !$hasTheftCooldown ? 'readyText' : ''; ?>" id="theftCooldown">
+                <?= $hasTheftCooldown ? $cooldownTheftTimeLeft.'s' : 'Klar'; ?>
+            </span>
+            </p>
         </div>
     </div>
+    <script>
+
+    var theftHeaderCooldown = document.getElementById('theftCooldown');
+    var theftIcon = document.getElementById('theftIcon');  
+    
+    </script>
+    <?php if($hasTheftCooldown){ ?>
+    <script>
+
+        startCountdownHeader(theftIcon, theftHeaderCooldown, <?php echo $cooldownTheftTimeLeft ?>);
+
+    </script>
+    <?php } ?>
+    <!-- THEFT END -->
+
+
+
+
+
+
     <div class="action visitLink prevent-select" data-page="steal" data-phpfile="game/steal/steal.php" data-targetdiv="#gameContent">
         <div class="actionIcon">
         <iconify-icon icon="streamline:money-cash-coins-stack-accounting-billing-payment-stack-cash-coins-currency-money-finance"></iconify-icon>
