@@ -39,8 +39,15 @@ var theftIcon = document.getElementById('theftIcon');
         </div>
         <div class="gameBox fb60 mt-5 g5 df fdcol">
             <div id="countdownDiv" class="container" style="display: <?php echo $hasCooldown ? 'block' : 'none'; ?>;">
+            <div class="df fdrow g5 aic">
+                <div class="infoIcon defaultBlue">
+                    <iconify-icon icon="svg-spinners:clock"></iconify-icon>
+                </div>
                 <span>Du må vente <span id="secondsCountdown"><?php echo $cooldownTimeLeft; ?>s</span> før du kan utføre et nytt brekk!</span>
             </div>
+            </div>
+
+
             <table class="w-100" id="theftDiv" style="display: <?php echo $hasCooldown ? 'none' : 'table'; ?>;">
                 <thead>
                     <tr>

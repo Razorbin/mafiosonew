@@ -24,15 +24,48 @@ include 'db/db.php';
             <p class="actionTextSecondary readyText">Klar</p>
         </div>
     </div>
+
+
+
+    <!-- CRIME START -->
+    <?php
+
+    $stmt = $pdo->prepare('SELECT CD_time FROM cooldown WHERE CD_acc_id = :id AND CD_type = "crime"');
+    $stmt->execute(['id' => $_SESSION['ID']]);
+    $cd_crima = $stmt->fetchColumn();
+
+    $hasCrimeCooldown = $cd_crima > time();
+    $cooldownCrimeTimeLeft = $cd_crima - time();
+
+    ?>
     <div class="action visitLink prevent-select" data-page="crime" data-phpfile="game/crime/crime.php" data-targetdiv="#gameContent">
-        <div class="actionIcon">
-        <iconify-icon icon="game-icons:crime-scene-tape"></iconify-icon>    
-    </div>
+        <div id="crimeIcon" class="actionIcon <?= !$hasCrimeCooldown ? 'readyIcon' : ''; ?>">
+            <iconify-icon icon="game-icons:crime-scene-tape"></iconify-icon>    
+        </div>
         <div class="actionText">
             <p class="actionTextPrimary">Kriminalitet</p>
-            <p class="actionTextSecondary">55s</p>
+            <p class="actionTextSecondary">
+                <span class="<?= !$hasCrimeCooldown ? 'readyText' : ''; ?>" id="crimeCooldown">
+                    <?= $hasCrimeCooldown ? $cooldownCrimeTimeLeft.'s' : 'Klar'; ?>
+                </span>
+            </p>
         </div>
     </div>
+    <script>
+
+    var crimetHeaderCooldown = document.getElementById('crimeCooldown');
+    var crimeIcon = document.getElementById('crimeIcon');  
+    
+    </script>
+    <?php if($hasCrimeCooldown){ ?>
+    <script>
+
+        startCountdownHeader(crimeIcon, crimeHeaderCooldown, <?php echo $cooldownTheftTimeLeft ?>);
+
+    </script>
+    <?php } ?>
+    <!-- CRIME END -->
+
 
 
     <!-- GTA START -->

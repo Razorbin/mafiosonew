@@ -493,6 +493,10 @@ h6 {
   flex-grow: 1;
 }
 
+.fb100 {
+  flex-basis: 100%;
+}
+
 .fb70 {
   flex-basis: 70%;
 }
