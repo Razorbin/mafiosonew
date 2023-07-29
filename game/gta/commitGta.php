@@ -47,7 +47,7 @@ if($cd_gta > time()){
     } else {
         $response = array(
             'message' => 'Du feilet biltyveriet!',
-            'type' => 'success',
+            'type' => 'warning',
             'cooldown' => $gtasData[$index]['cooldown']
         );
         echo json_encode($response);

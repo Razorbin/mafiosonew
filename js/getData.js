@@ -28,6 +28,7 @@ $(document).ready(function () {
         $("#playersInJail").text(response.playersInJail);
         $("#interests").text(formattedInterests);
         $("#rank").text(response.rank);
+        $("#healthAmount").text(response.healthAmount + "%");
         $("#progressPercentage").text(response.progress.toFixed(1) + " %");
         $("#progressExp").text(formatNumberWithSpaces(response.exp) + " EXP");
 
@@ -39,6 +40,9 @@ $(document).ready(function () {
 
         var progressPercentage = response.progress;
         $("#rankbar").css("width", progressPercentage.toFixed(1) + "%");
+
+        var healthPercentage = response.health;
+        $("#healthbar").css("width", healthPercentage.toFixed(1) + "%");
       },
     });
   }

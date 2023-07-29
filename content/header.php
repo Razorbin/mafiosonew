@@ -18,7 +18,7 @@
         </div>
         <div class="rightHeader">
             <iconify-icon id="toggleLivechat" class="headerIcon" icon="solar:chat-dots-linear"></iconify-icon>
-            <iconify-icon class="headerIcon" icon="ion:notifications-outline"></iconify-icon>
+            <iconify-icon class="headerIcon visitLink" icon="ion:notifications-outline" data-page="notification" data-phpfile="game/notification/notification.php" data-targetdiv="#gameContent"></iconify-icon>
             <iconify-icon class="headerIcon" icon="ep:message-box"></iconify-icon>
             <iconify-icon class="headerIcon" icon="carbon:user-avatar-filled"></iconify-icon>
         </div>

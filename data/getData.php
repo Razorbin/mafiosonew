@@ -5,7 +5,7 @@ include '../functions/ranks.php';
 include '../functions/cities.php';
 
 
-$stmt = $pdo->prepare('SELECT exp, money, bankBalance, bullets, points, city FROM user WHERE id = :id');
+$stmt = $pdo->prepare('SELECT health, exp, money, bankBalance, bullets, points, city FROM user WHERE id = :id');
 $stmt->execute(['id' => $_SESSION['ID']]);
 $user = $stmt->fetch();
 
@@ -31,6 +31,7 @@ $cars = $carsUser;
 $maxCars = 50;
 $things = $itemsUser;
 $maxthings = 50;
+$health = $user['health'];
 
 $data = [
   'balance' => $balance,
@@ -48,7 +49,9 @@ $data = [
   'cars' => $cars,
   'maxCars' => $maxCars,
   'things' => $things,
-  'maxThings' => $maxthings
+  'maxThings' => $maxthings,
+  'health' => $health,
+  'healthAmount' => $health
 ];
 
 echo json_encode($data);

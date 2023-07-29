@@ -723,7 +723,8 @@ li {
   padding: 7px;
 }
 
-.rankbar {
+.rankbar,
+.healthbar {
   width: 100%;
   border: 1px solid #414141;
   height: 10px;
@@ -735,6 +736,12 @@ li {
   height: 100%;
   border-radius: 5px;
   background-color: var(--default-blue);
+}
+
+.healthbar .fill {
+  height: 100%;
+  border-radius: 5px;
+  background-color: white;
 }
 
 /* Add this attribute to the element that needs a tooltip */
