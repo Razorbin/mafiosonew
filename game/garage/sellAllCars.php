@@ -12,8 +12,8 @@ $totalValue = 0;
 $totalCars = count($cars);
 
 foreach ($cars as $car) {
-  if (isset($carValue[$car['car']])) {
-    $totalValue += $carValue[$car['car']];
+  if (isset($carsArr[$car['car']]['price'])) {
+    $totalValue += $carsArr[$car['car']]['price'];
   }
 }
 

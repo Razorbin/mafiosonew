@@ -3,6 +3,8 @@
 <?php
 
 include '../../db/db.php';
+include '../../functions/cars.php';
+include '../../functions/gtas.php';
 
 $stmt = $pdo->prepare('SELECT CD_time FROM cooldown WHERE CD_acc_id = :id AND CD_type = "gta"');
 $stmt->execute(['id' => $_SESSION['ID']]);
@@ -55,21 +57,13 @@ var gtaIcon = document.getElementById('gtaIcon');
                     </tr>
                 </thead>
                 <tbody class="mb-5">
-                    <tr class="clickable-tr">
-                        <td>Stjel bil fra AXA Auto Care</td>
-                        <td class="textSecondary">65s</td>
-                        <td class="tar">70%</td>
-                    </tr>
-                    <tr class="clickable-tr">
-                        <td>Stjel bil fra Desert Oasis Imports</td>
-                        <td class="textSecondary">105s</td>
-                        <td class="tar">50%</td>
-                    </tr>
-                    <tr class="clickable-tr">
-                        <td>Stjel bil fra AXA Auto Care</td>
-                        <td class="textSecondary">65s</td>
-                        <td class="tar">70%</td>
-                    </tr>
+                    <?php foreach ($gtasData as $item) { ?>
+                        <tr class="clickable-tr">
+                            <td><?= $item['action'] ?></td>
+                            <td class="textSecondary"><?= $item['cooldown'] ?>s</td>
+                            <td class="tar"><?= $item['chance'] ?>%</td>
+                        </tr>
+                    <?php } ?>
                 </tbody>
             </table>
         </div>
