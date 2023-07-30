@@ -3,6 +3,7 @@
 <?php
 
 include '../../db/db.php';
+include '../../functions/thefts.php';
 
 $stmt = $pdo->prepare('SELECT CD_time FROM cooldown WHERE CD_acc_id = :id AND CD_type = "theft"');
 $stmt->execute(['id' => $_SESSION['ID']]);
@@ -47,7 +48,6 @@ var theftIcon = document.getElementById('theftIcon');
             </div>
             </div>
 
-
             <table class="w-100" id="theftDiv" style="display: <?php echo $hasCooldown ? 'none' : 'table'; ?>;">
                 <thead>
                     <tr>
@@ -57,21 +57,13 @@ var theftIcon = document.getElementById('theftIcon');
                     </tr>
                 </thead>
                 <tbody class="mb-5">
+                <?php foreach ($theftData as $item) { ?>
                     <tr class="clickable-tr">
-                        <td>Ran nedslitt hus på Downtown East</td>
-                        <td class="textSecondary">65s</td>
-                        <td class="tar">70%</td>
+                        <td><?= $item['action'] ?></td>
+                        <td class="textSecondary"><?= $item['cooldown'] ?>s</td>
+                        <td class="tar"><?= $item['chance'] ?>%</td>
                     </tr>
-                    <tr class="clickable-tr">
-                        <td>Ran hus på Huntridge</td>
-                        <td class="textSecondary">105s</td>
-                        <td class="tar">50%</td>
-                    </tr>
-                    <tr class="clickable-tr">
-                        <td>Stjel ting fra villa på The Lakes</td>
-                        <td class="textSecondary">65s</td>
-                        <td class="tar">70%</td>
-                    </tr>
+                <?php } ?>
                 </tbody>
             </table>
         </div>
