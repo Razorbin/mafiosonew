@@ -1,6 +1,6 @@
 <?php
 $host = 'localhost';
-$db   = 'mafioso';
+$db   = 'mafioso'; // Edit me to your likings. Has to be same name as in migrate.php
 $user = 'root';
 $pass = '';
 
