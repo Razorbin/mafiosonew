@@ -1,0 +1,144 @@
+<!--
+
+    /\_/\           ___
+   = o_o =_______    \ \  Remove .local and visit me to migrate!
+    __^      __(  \.__) )
+(@)<_____>__(_____)____/
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='styling/migrateStyling.css' />
+    <title>Mafioso - Migrate</title>
+</head>
+<body>
+<?php
+
+
+if(isset($_POST['migrate'])){
+    // Edit these to your likings
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $databaseName = "mafioso"; // Database name to create
+
+    // Array containing table names and their corresponding column definitions
+    $tables = array(
+        'cars' => array(
+            'id' => 'int(255) NOT NULL PRIMARY KEY AUTO_INCREMENT',
+            'acc_id' => 'int(11) NOT NULL',
+            'car' => 'int(2) NOT NULL',
+            'city' => 'int(2) NOT NULL'
+        ),
+        'cooldown' => array(
+            'CD_id' => 'int(25) NOT NULL PRIMARY KEY AUTO_INCREMENT',
+            'CD_acc_id' => 'int(25) NOT NULL',
+            'CD_type' => 'varchar(255) NOT NULL',
+            'CD_time' => 'varchar(25) NOT NULL'
+        ),
+        'items' => array(
+            'id' => 'int(25) NOT NULL PRIMARY KEY AUTO_INCREMENT',
+            'acc_id' => 'int(25) NOT NULL',
+            'item' => 'int(25) NOT NULL',
+        ),
+        'notification' => array(
+            'id' => 'int(25) NOT NULL PRIMARY KEY AUTO_INCREMENT',
+            'text' => 'text NOT NULL',
+            'date' => 'int(32) NOT NULL',
+            'new' => 'int(1) NOT NULL DEFAULT 1',
+            'acc_id' => 'int(15) NOT NULL',
+        ),
+        'user' => array(
+            'id' => 'int(25) NOT NULL PRIMARY KEY AUTO_INCREMENT',
+            'username' => 'varchar(25) NOT NULL',
+            'money' => 'bigint(255) NOT NULL',
+            'bullets' => 'bigint(255) NOT NULL',
+            'city' => 'int(2) NOT NULL',
+            'bankBalance' => 'bigint(255) NOT NULL',
+            'exp' => 'bigint(255) NOT NULL',
+            'points' => 'bigint(255) NOT NULL',
+            'health' => 'int(3) NOT NULL',
+        ),
+        // Add more tables and their column definitions here
+    );
+
+    try {
+        // Create a new PDO instance with the database name in the connection string
+        $conn = new PDO("mysql:host=$servername;dbname=$databaseName", $username, $password);
+
+        // Set the PDO error mode to exception
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        // SQL query to create the database (you can remove this part, as the database is already specified in the connection string)
+        $sql = "CREATE DATABASE IF NOT EXISTS $databaseName";
+        $conn->exec($sql);
+
+        function createTable($conn, $tableName, $columns)
+        {
+            // Save data from the table before dropping it
+            $stmt = $conn->prepare("SELECT * FROM `$tableName`");
+            $stmt->execute();
+            $tableData = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        
+            // SQL query to drop the table if it exists
+            $sql_drop_table = "DROP TABLE IF EXISTS `$tableName`";
+            $conn->exec($sql_drop_table);
+        
+            // SQL query to create the table with its columns
+            $sql_create_table = "CREATE TABLE `$tableName` (";
+            foreach ($columns as $columnName => $columnDefinition) {
+                $sql_create_table .= "`$columnName` $columnDefinition, ";
+            }
+            $sql_create_table = rtrim($sql_create_table, ', '); // Remove the last comma and space
+            $sql_create_table .= ")";
+            $conn->exec($sql_create_table);
+        
+            // Insert data back to the table after it has been created
+            foreach ($tableData as $row) {
+                $existingColumns = array_intersect(array_keys($row), array_keys($columns));
+                $column_names = implode(', ', $existingColumns);
+                $column_values = array_map(function ($value) use ($conn) {
+                    return $conn->quote($value);
+                }, array_intersect_key($row, array_flip($existingColumns)));
+        
+                $sql_insert_data = "INSERT INTO `$tableName` ($column_names) VALUES (" . implode(', ', $column_values) . ")";
+                $conn->exec($sql_insert_data);
+            }
+        
+            return '<div class="feedback feedback-success"><span>Table '.$tableName.' created successfully.</span></div>';
+        }
+
+        // Loop through the tables array and create each table with data preservation
+        $successMessages = array();
+        foreach ($tables as $tableName => $columns) {
+            $successMessages[] = createTable($conn, $tableName, $columns);
+        }
+
+        echo '<div class="feedback feedback-success"><span>Database '.$databaseName.' created successfully.</span></div>';
+
+        // Output individual success messages for each table creation
+        foreach ($successMessages as $message) {
+            echo $message;
+        }
+
+    } catch (PDOException $e) {
+        echo "Error creating database and tables: " . $e->getMessage();
+    }
+
+    // Close the connection
+    $conn = null;
+}
+
+?>
+
+<form method="post">
+    <input type="submit" name="migrate" value="Migrate baby">
+</form>
+
+</body>
+</html>
