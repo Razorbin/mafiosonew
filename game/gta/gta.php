@@ -37,7 +37,7 @@ var gtaIcon = document.getElementById('gtaIcon');
 <div class="functionContainer df g5">
     <div class="fb60" style="align-self: flex-start;">
         <div class="gameBox fb60 df aic">
-            <img src="media/gta.png"/>
+            <img src="media/game/gta.png"/>
         </div>
         <div class="gameBox fb60 mt-5 g5 df fdcol">
             <div id="countdownDiv" class="container" style="display: <?php echo $hasCooldown ? 'block' : 'none'; ?>;">

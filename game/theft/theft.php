@@ -35,7 +35,7 @@ var theftIcon = document.getElementById('theftIcon');
 <div class="functionContainer df g5">
     <div class="fb60" style="align-self: flex-start;">
         <div class="gameBox fb60 df aic">
-            <img src="media/brekk.png"/>
+            <img src="media/game/theft.png"/>
         </div>
         <div class="gameBox fb60 mt-5 g5 df fdcol">
             <div id="countdownDiv" class="container" style="display: <?php echo $hasCooldown ? 'block' : 'none'; ?>;">

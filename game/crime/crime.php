@@ -36,7 +36,7 @@ var crimeIcon = document.getElementById('crimeIcon');
 <div class="functionContainer df g5">
     <div class="fb60" style="align-self: flex-start;">
         <div class="gameBox fb100 df aic jcc">
-            <img src="media/crime.png"/>
+            <img src="media/game/crime.png"/>
         </div>
         <div class="gameBox mt-5 g5 df fdcol">
             <div id="countdownDiv" class="container" style="display: <?php echo $hasCooldown ? 'block' : 'none'; ?>;">
