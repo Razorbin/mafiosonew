@@ -1,5 +1,32 @@
 <div id="feedback" class="mt-5"></div>
 
+
+<div class="functionContainer df g5">
+    <div class="fb60" style="align-self: flex-start;">
+        <div class="gameBox fb100 df aic jcc">
+            <img src="media/game/bank.png"/>
+        </div>
+    </div>
+    <div class="gameBox fb40" style="align-self: flex-start;">
+        <div class="fb60" style="align-self: flex-start;">
+            <div class="df g5 fdcol">
+                <b>Banken i {BY}</b>
+                <span class="textSecondary">Banken i {by} er eid av bla bla bla</span>
+                <span class="textSecondary">Banken i {by} er eid av bla bla bla</span>
+                <span class="textSecondary">Banken i {by} er eid av bla bla bla</span>
+                <span class="textSecondary">Banken i {by} er eid av bla bla bla</span>
+                <span class="textSecondary">Banken i {by} er eid av bla bla bla</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
 <div class="functionContainer df g5">
   <div class="gameBox fb50 df aic">
     <div class="df g5 fdcol w-100">
