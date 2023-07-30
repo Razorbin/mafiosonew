@@ -1,6 +1,5 @@
 <div id="feedback" class="mt-5"></div>
 
-
 <div class="functionContainer df g5">
     <div class="fb60" style="align-self: flex-start;">
         <div class="gameBox fb100 df aic jcc">
@@ -14,18 +13,10 @@
                 <span class="textSecondary">Banken i {by} er eid av bla bla bla</span>
                 <span class="textSecondary">Banken i {by} er eid av bla bla bla</span>
                 <span class="textSecondary">Banken i {by} er eid av bla bla bla</span>
-                <span class="textSecondary">Banken i {by} er eid av bla bla bla</span>
-                <span class="textSecondary">Banken i {by} er eid av bla bla bla</span>
             </div>
         </div>
     </div>
 </div>
-
-
-
-
-
-
 
 <div class="functionContainer df g5">
   <div class="gameBox fb50 df aic">
@@ -39,7 +30,7 @@
       </div>
       <div class="df aic g5 jcsb">
         <p class="textSecondary">Totalt overført/mottatt</p>
-        <h3>1 000<span class="textSecondary fontSmall"> ,- /</span> 5 000<span class="textSecondary fontSmall"> ,-</span></h3>
+        <h3>NaN<span class="textSecondary fontSmall"> ,- /</span> NaN<span class="textSecondary fontSmall"> ,-</span></h3>
       </div>
       <div class="df aic g5 jcsb">
         <p class="df g5 textSecondary aic">
@@ -143,10 +134,10 @@
 
       <div class="mt-5">
         <ul class="mt-5 textSecondary">
-          <li>Antall penger tjent på renter: 52 000 000,-</li>
-          <li>Antall penger overført: 150 000 000,-</li>
-          <li>Antall penger mottatt: 120 000 000,-</li>
-          <li>Antall overførsler: 150,-</li>
+          <li>Antall penger tjent på renter: NaN,-</li>
+          <li>Antall penger overført: NaN,-</li>
+          <li>Antall penger mottatt: NaN,-</li>
+          <li>Antall overførsler: NaN,-</li>
         </ul>
       </div>
     </div>

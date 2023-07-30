@@ -247,17 +247,17 @@ a:hover {
   justify-content: space-between;
 }
 
-.leftMenuItem span {
+.leftMenuItem .spanInfo {
   color: var(--default-blue);
 }
 
-.leftMenuItem .visitLink {
+.leftMenuItem {
   text-decoration: none;
   color: white;
   transition: 0.2s;
 }
 
-.leftMenuItem .visitLink:hover {
+.leftMenuItem:hover {
   cursor: pointer;
   color: var(--default-blue);
 }

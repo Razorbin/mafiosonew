@@ -70,7 +70,7 @@ var airportIcon = document.getElementById('airportIcon');
             
                 ?>
                 <div class="fb50">
-                    <?= $filteredCities[$i] ?>
+                    Reis til <?= $filteredCities[$i] ?>
                 </div>
                 <?php
             

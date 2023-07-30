@@ -19,6 +19,7 @@ $(document).ready(function () {
 
         $("#balance").text(formattedBalance + ",-");
         $("#bankBalance").text(formattedBankBalance);
+        $("#bankBalanceLeftMenu").text(formattedBankBalance + ",-");
         $("#bullets").text(formattedBullets);
         $("#points").text(formattedPoints);
         $("#city").text(response.city + " " + response.cityTax);
