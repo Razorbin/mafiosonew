@@ -1,6 +1,7 @@
 DROP SCHEMA IF EXISTS mafiosoDB;
 CREATE SCHEMA IF NOT EXISTS mafiosoDB;
 USE mafiosoDB;
+/* test for git commit */
 
 /* users - Holds all users in the game. */
 CREATE TABLE IF NOT EXISTS users (
