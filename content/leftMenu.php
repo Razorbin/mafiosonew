@@ -46,8 +46,8 @@
         <span>Dagens safe</span>
         <span class="spanInfo">Klar</span>
     </div>
-    <div class="leftMenuItem">
-        <div class="visitLink">Drapsorganisering</div>
+    <div class="leftMenuItem visitLink" data-page="kill" data-phpfile="game/kill/kill.php" data-targetdiv="#gameContent">
+        <span>Drapsorganisering</span>
     </div>
     <div class="leftMenuItem">
         <div class="visitLink">Skytetrening</div>

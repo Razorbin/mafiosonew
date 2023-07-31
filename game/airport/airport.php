@@ -2,25 +2,7 @@
 
 <?php
 
-include '../../db/db.php';
-include '../../functions/cities.php';
-
-$stmt = $pdo->prepare('SELECT CD_time FROM cooldown WHERE CD_acc_id = :id AND CD_type = "airport"');
-$stmt->execute(['id' => $_SESSION['ID']]);
-$cd_airport = $stmt->fetchColumn();
-
-$stmt = $pdo->prepare('SELECT city FROM user WHERE id = :id');
-$stmt->execute(['id' => $_SESSION['ID']]);
-$user_row = $stmt->fetchColumn();
-
-$hasCooldown = $cd_airport > time();
-$cooldownTimeLeft = $cd_airport - time();
-
-if ($user_row >= 0 && $user_row < count($cities)) {
-    unset($cities[$user_row]);
-}
-
-$filteredCities = array_values($cities);
+include 'airportFunc.php';
 
 ?>
 
@@ -100,46 +82,4 @@ Praesent semper iaculis dolor ut varius. Suspendisse felis velit, vestibulum nec
     </div>
 </div>
 
-<script>
-
-function runGetData() {
-  var script = document.createElement('script');
-  script.src = 'js/getData.js';
-  document.body.appendChild(script);
-}
-
-$(document).ready(function () {
-  $('.clickable-tr').off('click').on('click', function () {
-    var $this = $(this);
-    var clickedIndex = $this.index(); // Get the index of the clicked <tr> among its siblings
-
-    if (!$this.data('clicked')) {
-      $this.data('clicked', true);
-
-      $.ajax({
-        url: 'game/airport/travel.php',
-        type: 'POST',
-        data: {
-          clickedIndex: clickedIndex, // Send the index as data to the server-side
-        },
-        dataType: 'json',
-        success: function (response) {
-          createFeedbackDiv(response.message, response.type);
-          hideAndShowDiv(airportDiv, response.cooldown);
-          showAndHideDiv(countdownDiv, response.cooldown);
-          startCountdown(secondsCountdown, response.cooldown);
-          startCountdownHeader(airportIcon, airportCooldown, response.cooldown);
-          runGetData();
-        },
-        error: function (xhr, status, error) {
-          newSnackbar(error, 'error');
-        },
-        complete: function () {
-          $this.data('clicked', false);
-        }
-      });
-    }
-  });
-});
-
-</script>
+<script src="game/airport/airport.js">
